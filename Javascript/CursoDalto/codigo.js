@@ -52,6 +52,8 @@ frase =`Hola ${nombre} y estoy aprendiendo JS`;
 
 document.write(frase);
 
+document.write(frase);
+
 
 
 
