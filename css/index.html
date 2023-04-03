@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera Página con estilos CSS</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/">
+</head>
+<body>
+    
+    <h1>Esto es un título</h1>
+
+    <h2 class="titulo2">Esto es un subtitulo H2</h2>
+
+    <h2 id="subtitulo">Esto es un subtitulo H2</h2>
+
+    <h2 atributo_creado="true">Esto es un subtitulo H2</h2>
+
+    <h2><p>Esto es un subtitulo</p></h2>
+
+    <h2 class="titulo2"><p>Esto es un subtitulo H2</p></h2>
+
+    <input type="text" value="Hola Mundo">
+
+    <button>Botón de ejemplo</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque culpa non labore similique ipsa quidem iusto tenetur nihil alias vel.</p>
+
+    <!-- /* // METODOLOGÍA BEM // */ -->
+    <!-- // Simplemente tenemos en cuenta cual es la clase --active, algo que se puede cambiar luego en js // -->
+    <!-- // Se trabaja por secciones // -->
+
+    <div class="form">
+
+        <input type="text" class="form__input">
+        <input type="text" class="form__input">
+        <input type="text" class="form__input--active">
+        <input type="text" class="form__input">
+        <input type="text" class="form__input">
+        <input type="password" class="form__input">
+    </div> 
+
+
+    <!-- // Unidades de medida //
+    // Relativas: variables //
+    // Fijas // -->
+
+    <!-- // Medidas fijas // -->
+
+    <div class ="form_fijo">
+        <h2>MEDIDAS FIJAS EN LETRAS</h2>
+    </div>
+
+    <!-- // Medidas relativas // -->
+
+    <div class="form_relativo">
+        <h2>MEDIDAS RELATIVAS EN LETRAS</h2>
+
+    </div>
+
+
+<!-- // TEORIA DE CAJAS // -->
+    <h2 class="titulo_bloque" >ELEMENTO EN BLOQUE</h2>
+    <b style="background-color: blueviolet;">ELEMENTO EN LÍNEA</b>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+
+/* // Estructura base de CSS //
+
+selector{
+    propiedad:valor;
+} */
+
+
+/* // TEORIA ESPECIFICIDAD: EVITA CONFLICTOS ENTRE ESTILOS // */
+
+/* Se toman los estilos en cascada (en caso de que los elementos esten dentro de la misma jerarquia),
+ siempre se toma el ultimo si existe algún conflicto  */
+
+ /* // JERARQUIA: tipo container < CLASE, ATRIBUTO O PSEUDOCLASE < Identificadores < estilos en linea < !important   // */
+
+/* // ejemplo "!important"  // */
+
+/* h1{
+    color: red !important;
+} */
+
+
+
+h1{
+    color:purple;
+}
+
+/* // Selector universal "*" // */
+
+/* 
+*{
+
+    color:aqua;
+}
+
+*/
+
+
+ /* // Selectores de tipo, button, h1, p //
+
+h1{
+    color:red;
+}
+
+button{
+    color: blueviolet;
+} */
+
+
+/* // Selector por clase(No tiene porque ser Unico), añadiendo un atributo class en html// */
+
+.titulo2{
+    color: coral;
+}
+
+
+/* // Selector por id (Tiene que ser UNICO, NO SE PUEDE REPETIR), añadiendo un atributo # id en html // */
+
+#subtitulo{
+
+    color:brown;
+}
+
+/* // Selector por atributos creados por mi [nombre del atributo ="" */
+[atributo_creado="true"]{
+
+    color:cyan;
+}
+
+/* // Selector por descendiente, contenedor principal seguido del contenedor contenido en el principal // */
+
+h2 p{
+    color:darkgoldenrod;
+}
+
+
+/* // Tambien se puede seleccionar de forma descendiente a atributos o id // */
+
+.titulo2 p{
+    color:bisque;
+}
+
+/* // Selector con pseudoclases, ejemplo tipico hover, sucede un evento sobre un container, en ese momento es una pseudoclase // */
+
+p:hover{
+    color:cadetblue;
+}
+
+
+
+
+.form__input:first-child{
+
+    color: red;
+}
+
+.form__input--active{
+    color:blue;
+}
+
+
+/* // Medidas fijas // */
+
+.form_fijo h2{
+
+    font-size: 20px;
+}
+
+
+/* // Medidas relativas  REM  y EM// */
+/* // Por defecto un EM son 16 px por defecto (esto se lo da el navegador, dependiendo de esto tambien), 5em * 16px = 80 px // */
+/* // El contenedor tambien define el valor de EM, de esta forma se convierte en relativo  // */
+/* // Si en la caja contenedora le digo que el valor del font-size es de 20px, dentro del contenido un EM va a valer 20px // */
+
+/* .form_relativo{
+
+    font-size: 10px;
+} */
+
+/* // En este caso cada EM vale 1o px // */
+/* .form_relativo h2{
+    
+    font-size:5em ;
+
+} */
+
+/* // Para quitarle el valor por defecto de posicion a toda la pagina se hace de la siguiente forma // */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* // Se puede trabajar con View Port : vw (width) wh(heigth), es como trabajar con porcentajes,
+ width= 50 vw; significa que el ancho va a ser el 50 % de la pantalla // */
+
+.form_relativo{
+    background-color: aqua;
+    width: 50vw;
+    height: 20vh ;
+}
+
+/* // PROPIEDADES DE TEXTO // */
+
+
+/* // Para exportar tipografias voy a google fonts y exporto la url // */
+
+/* 
+font-size: Tamaño de letra 
+font-family : Tipografia
+line-heigth: Tamaño que ocupa la letra, VALOR ENTERO EJEMPLO (line-heigth=2),
+             se divide desde la mitad de la letra, en caso de line-heigth =1 ocuparia 0,5 desde el medio para arriba y 05, desde el medio para abajo
+
+font-weight: grosor de letra
+font-stretch: valores: normal, condensed....
+
+*/
+
+
+
+/* // NORMALIZE // */
+/* // Tiene que ver con todas las propiedades pre-establecidas del navegador // */
+/* // Se descarga desde internet, se incluye en el proyecto // */
+/* // Tambien se puede incluir directamente en las propiedades link de html // */
+/* // Si se descarga en local y se linkea, es importante añadir la propiedad al archivo de normalize.css//
+*{
+    box-sizing : border-box;
+} */
+
+/* // Esta propiedad regula de forma automatica el tamaño de las cajas aunque añada paddings, borders..
+Siempre va a respetar el tamaño que le he definido para la caja //
+// Si defino el tamaño de una caja en 50 px, y le doy un pading de 10px, va a poner 10px dentro,
+ 10 px fuera y va a reajustar el borde y el tamaño de la caja para que se sigan cumpliendo los 50px establecidos de tamaño // */
+
+
+
+
+ /* // Teoria de cajas //
+
+ Existen dos tipos de cajas
+ En linea y en bloque */
+
+ /* Los elementos bloque siempre tienen como ancho el total del contenedor que lo contiene, como por ejemplo la etiqueta <h2>,
+los elementos que van despues de este h2 van  a ir debajo del 
+<p> tambien es un elemento en bloque
+
+ Los elementos en linea tiene como ancho, el tamaño necesario que cubre su contenido,
+como por ejemplo la etiqueta <b>, elos elementos que van después de este b van a ir en el espacio restante */
+
+/* // Igualmente esto siempre puede cambiarse // */
+
+
+/* // CON LA PROPIEDAD "display" puede cambiarse este comportamiento // */
+
+/* // Paso de bloque a linea //
+// Tambien se puede hacer viceversa // */
+.titulo_bloque{
+    display: inline;
+}
+
+
+
+/* // A LOS ELEMENTOS EN LINEA NO SE LES PUEDE DAR UN ALTO NI UN ANCHO //
+// A LOS ELEMENTOS EN BLOQUE SI SE LES PUEDE DAR UN ALTO Y UN ANCHO // */
+
+
+
+
+/* // PROPIEDADES DE CAJA: Propiedades que modifican algun elemento de una caja // */
+
+
+/* 
+
+background-color: Color de fondo
+padding: Distantia entre los elementos de la caja y los bordes de la caja 
+El padding es una propiedad que puedo acortar
+padding-botton
+padding-top
+padding-left
+padding-right
+
+padding: 20px le estaria dando un padding general al contenido 
+
+orden de las medidas top, right, botton, left EN SENTIDO DE LAS AGUJAS DEL RELOJ 
+
+padding: 10px, 20p
+*/
