@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- // METADATOS: Información que describe datos de otros objetos //
+    // Describen recursos ejemplo: describir un video, una imagen...,
+     estos vienen con un titulo, una etiqueta, esto son metadatos // -->
+     <!-- // etiqueta meta para palabras clave //
+     // meta name="keywords" content=" programacion, web" -->
+     <!-- // Etiqueta para el copy //
+     <meta name="copyright" content="Pablodev21">
+
+     // Etiqueta para indexar o para no indexar "noindex" //
+     <meta name="robots" content="index"> -->
+    
+     <!-- // Poner icono en la ventana de la página //
+     // La extension siempre tiene que ser .ico // -->
+     <!-- <link rel="icon" href="icono.ico"> -->
+
+
+     <!-- // Esta etiqueta es para linkear con css //
+    <link rel="stylesheet" href="miDiseño.css"> -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pablodev21">
     <title>ETIQUETAS  HTML</title>
 </head>
 <body>
@@ -18,11 +39,18 @@
 
     <small> Letra pequeña </small>
     <br>
+
+    <!-- // ENLACES // -->
+
+    <!-- // Al ser un id se referencia con # en caso de ser un class se referencia con un punto "." // -->
+
+    <a href="#final">Enlace al final de la página</a>
     <a href="https://www.youtube.com/">Esto es un enlace</a>
     <br>
     <a href="segundaPagina.html"> Esto es una redirección interna pagina 2</a>
     <br>
     <a href="pruebas/terceraPagina.html"> A la página 3</a>
+    <a href="secciones.html"> Enlace a secciones</a>
 
 
     <p>
@@ -33,6 +61,93 @@
         Esto es un <a href="https://google.es" target="_blank">enlace</a> que me abre otra ventana
     </p>
 
+
+    <p>
+        Lista desordenada
+    </p>
+
+    <!-- // Las listas desordenadas vienen precedidas de un "." punto, propiedad que se puede quitar // -->
+
+    <ul>
+        <li>Coche</li>
+        <li>Moto</li>
+        <li>Avión</li>
+    </ul>
+
+    <p>
+        Lista ordenada
+    </p>
+
+    <!-- // Las listas ordenadas tienen propiedades que permiten cambiar que es lo que las ordenada // -->
+    <ol>
+        <li>Coche</li>
+        <li>Moto</li>
+        <li>Avión</li>
+    </ol>
+    
+    <h2>Multimedia</h2>
+
+
+    <!-- // Poner imagenes // -->
+    // src para indicar ruta, alt para darle info, title titulo de la imagen
+
+    <p>Imagen externa</p>
+
+    <img src="https://uploadgerencie.com/imagenes/combinacion-negocios-ejemplos.png" width="300px" height="300px" alt="Imagen de ejemplo" title="Imagen para practicar">
+
+    <p>Imagen interna</p>
+
+    <img src="multimedia_web/ejemplo.png" width="300px" height="300px">
+
+    <p>Video</p>
+    <video src="multimedia_web/coche.MP4" width="300px" height="300px" controls=""></video>
+    <audio src="multimedia_web/coche.MP4" controls=""></audio>
+    <p>Audio</p>
+
+
+    <p>DIV´S, agrupación de contenido </p>
+    <div>
+        <h3><b>Esto es un div diferenciado de los anteriores div 1</b></h3>
+    </div>
+
+    <div>
+        <h3><b>Esto es un div diferenciado de los anteriores div 2</b></h3>
+    </div>
+
+    <div>
+        <h3><b>Esto es un div diferenciado de los anteriores div 3</b></h3>
+    </div>
+
+
+    <p>Formularios</p>
+
+    <!-- // El metodo "post" indica que el formulario se manda al servidor // -->
+    <!-- // El atributo required hace que sea obligatorio completar ese campo, aunque estas validaciones
+    es preferible hacerlas en la parte de back-end para evitar problemas de seguridad // -->
+    <!-- // El atributo readonly es para que un campo sea de solo lectura
+    Aunque se envia igualmente al servidor 
+    // -->
+    <!-- // La propiedad que recoge lo que hay dentro de un input es el value, es lo que recoge el servidor // -->
+    <form method="post">
+        <input type="text" name="nombre para el back-end">
+        <input type="password" name="contrasena" required="">
+        <input type="number" name="Numeros">
+        <input type="email" name="email" value="">
+        <input type="color" name="colores">
+        <input type="range" name="rango de numeros" min="10", max="100">
+        <input type="date" name="fecha">
+        <textarea readonly=""> Esto solo se puede leer</textarea>
+        <input type="time" name="tiempo">
+        <input type="button" name="Boton" value="Boton">
+        <input type="submit" name="Enviar datos"> 
+    </form>
+
+
+    <h3 id="final"> FINAL DE LA PÁGINA</h3>
+    
+
+
+    
 
 </body>
 </html>
