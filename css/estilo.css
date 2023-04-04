@@ -356,7 +356,27 @@ top, right,bottom y left */
 
 
 
+/* // PROPIEDAD CURSOS // */
+/* 
+// Utilizado para como se ve el cursos en encima de un elemento // */
 
+.cajaCursor{
+
+    width:100px;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 2em;
+    border: 5px solid red;
+    background-color: burlywood;
+    
+}
+
+
+/* // Aqui se veria como funciona con un hover // */
+.cajaCursor:hover{
+
+    cursor: row-resize;
+}
 
 
 

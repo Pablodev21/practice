@@ -1,0 +1,35 @@
+/* // Se trata de diseñar de cara a ocupar varias resoluciones // */
+/* // Mobile First es todo lo contrario, esto es lo recomendado por google // */
+/* // Se utiliza el MediaQuery, igual que en flutter // */
+
+
+
+*{
+
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 20px;
+}
+
+div{
+    width: 45%;
+    display: inline-block;
+    padding: 20px;
+    background-color: #ddd;
+
+}
+h1{
+    font-size: 24px;
+}
+
+
+/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 800px hacemos algo // */
+@media only screen and (max-width:800px){
+
+    div{
+        display: block;
+        width: 100%;
+    }
+    
+}

@@ -2,7 +2,8 @@
 //  Cambiar resoluciones de imagenes // */
 /* // Object fit tiene varios posibles valores // */
 /* 
-Contain: Valor por defento, las imagenes se ajusta automaticamente a su contenedor
+Contain: Valor por defento, las imagenes se ajusta automaticamente a su contenedor,mantiene
+resolucion ajustandose al contenido sin rellenar espacios
 
 Cover: Se ajusta al contener y recorta los bordes
 
@@ -54,3 +55,8 @@ box-sizing: border-box;
     border:2px solid red;
     object-fit: scale-down;
 }
+
+ 
+
+
+
