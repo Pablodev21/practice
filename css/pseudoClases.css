@@ -6,26 +6,39 @@
 /* 
 hover: raton encima del elemento 
 
-
-
-
-
-
  */
 
  /* // Div con Hover // */
+
+ /* // APUNTE IMPORTANTE, CENTRAR CONTENIDO DE UN DIV //
+
+    display: flex;
+    justify-content: center; centra en horizontal
+    align-items: center; centra en vertical
+    
+    */
+
  .caja1 {
 
-    
+    display: flex;
+    justify-content: center; /* para centrar horizontalmente */
+    align-items: center; /* para centrar verticalmente */
+    flex-direction: column; /* para dar direccion en columna y no en fila */
+    margin: auto;
     height: 200px;
     width: 200px;
     background-color: slateblue;
-    margin: auto;
-    text-align: center;
     
-    
-  
  }
+
+
+ 
+
+.textoCaja{
+    margin-bottom:1em;
+}
+ 
+
 
  
  /* // Así hago que al pasar el raton suceda lo que ponga aqui // */
@@ -43,16 +56,9 @@ hover: raton encima del elemento
  }
 
 
-
  /* // Pseudo clase para enlaces : visited // */
 
  /* // Utilizado para cuando se ha visitado un enlace // */
- .enlace{
-    display: block;
-    font-size: large;
-    
-    
- }
 
  /* //Para cuando no se ha visitado // */
  /* // Tendrá este color mientras no se visite // */
@@ -60,6 +66,72 @@ hover: raton encima del elemento
     color: burlywood;
 }
  
+/* // Enlaces visitados // */
+ .enlace :visited{
+    color:aqua;
+ }
 
- 
+
+ /* // Pseudoclase :active // */
+ /* // Cuando se hace click encima de un elemento // */
+
+ .caja2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    background-color: cadetblue;
+    margin: auto;
+    margin-top: 2em;
+    transition: background-color 1s, width 5s;
+ }
+
+.caja2:active{
+    background-color: red;
+    width: 600px;
+    
+}
+
+
+/* // Pseudoclase focus // */
+/* // Cuando el elemento tiene el foco // */
+/* // Se utiliza con inputs // */
+
+.entrada{
+    display: block;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.entrada:focus{
+    background-color: blue;
+    
+}
+
+
+
+/* // Pseudoclase lang// */
+/* // Es una funcion para cambiar el estilo del lenguaje que reconoce en el texto // */
+/* // Casi ni se usa // */
+.caja3{
+
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    background-color:darksalmon;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 2em;
+
+}
+
+.caja3 b:lang(es){
+
+    background-color: darkseagreen;
+}
+
+
 
