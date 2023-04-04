@@ -129,6 +129,7 @@ p:hover{
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -226,3 +227,159 @@ orden de las medidas top, right, botton, left EN SENTIDO DE LAS AGUJAS DEL RELOJ
 
 padding: 10px, 20p
 */
+
+/* // Para centrar el texto de un contenedor //
+text-aling : center; */
+
+/* // Para darle un margen al elemento //
+margin:10px; */
+
+/* // Borde redondo //
+border-radius:10px; */
+
+/* // Borde normal  Es una propiedad acortada // */
+/* border: 4px + estilo de borde (solid,dashed) + color (blue, red) */
+
+
+/* // Similar al border esta el outline, con la diferencia de que no ocupa espacio en si // */
+/* // Respeta el tamaño de la caja sin recortarle el espacio que ocupa el borde o sumarselo a su ancho y largo // */
+/* // Sirve para enmarcar elementos // */
+
+
+/* // Propiedad para darle sombra a la caja //
+
+box-shadow: 2px 4px (estos dos son lo que se desplaza respeto de su sombra) 10px 0(borde exterior) black */
+
+/* // Lo mismo para las letras //
+text-shadow: */
+
+
+/* // Box model //
+Propiedades que lo caracterizan 
+content le modifica con el line-height
+padding la modificar padding
+border la modifca border
+margin la modifica el margin 
+*/
+
+
+/* // Propiedad, que realmente es una funcion y sirve para hacer animaciones //
+Ejemplo
+transform : rotate(45deg); */
+
+
+/* // POSITION // */
+
+/* // Posiciona elementos //
+Adquiere propiedades nuevas por su posicion 
+Si un elemento esta positioned, afecta al flujo y al orden de como están posicionados los objetos 
+*/
+/* Un elemento al estar posicionado obtiene 4 propiedades:
+top, right,bottom y left */
+
+/* Propiedades o formas de posicionar */
+/* 
+    STATIC: Por defecto no esta posicionado
+
+    RELATIVE: Aunque el elemento se mueva, se sigue conservando el espacio que ocupaba inicialmente //
+
+    ABSOLUTE: Similar a relative pero con 2 diferencias: 1. El espacio que deja el contenedor no se reserva.   
+                                                         2. El ancho del contenedor se ajusta a su contenido. 
+
+    FIXED: El espacio del contenedor no queda reservado, similar a absolute. La diferencia es que queda fijo en su posición. Se puede usar en barras de navegador //
+
+
+    STICKY: Mantiene el espacio en la página igual que el relative. Con esto puedo definir en que momento el contenedor queda fijo en un espacio como un FIXED
+
+    */
+
+    
+
+.caja1{
+
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: block;
+    background-color: red;
+    top:20px
+
+}
+.caja2{
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: block;
+    background-color: blue;
+    position: relative;
+    left: 200px;
+    
+}
+.caja3{
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: block;
+    background-color: green;
+    
+    
+}
+.caja4{
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: block;
+    background-color: blueviolet;
+    position: absolute;
+    opacity: 0;
+}
+
+.caja5{
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    display: block;
+    background-color: yellow;
+    
+}
+
+
+
+
+/* // z-index marca que contenedor aparece por encima del resto, es decir, les da preferencia o jerarquia // */
+
+/* // Valor por defecto de z-index = 0 // */
+/* // Puede existir un conflicto entre contenedores padres e hijos cuando se utiliza z-index // */
+/* // Entre padres e hijos, aunque al padre le demos un z-index superior al del hijo no se va a posicionar por encima //
+
+// La única forma es hacer que el hijo tenga un z-index negativo y el padre no tenga directamente un z-index definido // */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

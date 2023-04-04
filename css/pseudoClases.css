@@ -1,0 +1,65 @@
+/* // Pseudo Clases // */
+
+/* // Se trabajan igual que un Pseudo Elemento que queda a la escucha de un evento // */
+
+
+/* 
+hover: raton encima del elemento 
+
+
+
+
+
+
+ */
+
+ /* // Div con Hover // */
+ .caja1 {
+
+    
+    height: 200px;
+    width: 200px;
+    background-color: slateblue;
+    margin: auto;
+    text-align: center;
+    
+    
+  
+ }
+
+ 
+ /* // Así hago que al pasar el raton suceda lo que ponga aqui // */
+ 
+ /* // La propiedad transition permite cambiar la velocidad a la que suceden las transiciones como este hover // */
+ .caja1:hover{
+    background: red;
+    width: 100px;
+    height: 100px;
+    border: 5px solid grey;
+    transition:  background 3s, height 5s, width 5s, border 2s ;
+    /* Si quiero ponerlo todo en el mismo tiempo */
+    /* transition: all 3s; */
+    
+ }
+
+
+
+ /* // Pseudo clase para enlaces : visited // */
+
+ /* // Utilizado para cuando se ha visitado un enlace // */
+ .enlace{
+    display: block;
+    font-size: large;
+    
+    
+ }
+
+ /* //Para cuando no se ha visitado // */
+ /* // Tendrá este color mientras no se visite // */
+ .enlace :link{
+    color: burlywood;
+}
+ 
+
+ 
+
