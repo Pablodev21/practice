@@ -1,0 +1,35 @@
+
+/* // Reincio de propiedadesd de la página para que no dependa del navegador // */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+/* // em como medida flexible, equivale 1em aprox 16-18px // */
+#mainContainer{
+
+    background-color: grey;
+    height: 5em;
+    width: 10em;
+}
+
+
+
+
+
+
+
+
+
+
+/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 600px hacemos algo // */
+@media only screen and (max-width:800px){
+
+    div{
+        display: block;
+        width: 100%;
+    }
+    
+}
