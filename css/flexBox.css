@@ -10,6 +10,14 @@
     display: flex;
     /* // Con esto puedo cambiar la direccion del main axis de la caja que contiene los elementos //
     flex-direction: column; */
+    /* // Para alinear en en mainAxis //
+    justify-content: center; */
+
+    /* // Para alinear en el crossAxis //
+    align-items: center; */
+    /* // Si hay varias lineas //
+    align-content: center; */
+
 }
 .caja{
 
@@ -17,6 +25,16 @@
     height: 120px;
     width: 120px;
     margin: 5px;
+
+    /* // Propiedades de los items del flexBox // */
+    /* // Alineacion en el crossAxis //
+    align-self: ; */
+    /* // Margin que se centra //
+    margin: auto; */
+    /* // Flex grow, coge el espacio sobrante y lo reparte entre el resto de elementos //
+    flex-grow: ; */
+    /* // Decide que espacio va a ocupar/ceder cada elemento en relación al resto de elementos//
+    flex-shrink: ; */
 
 }
 
