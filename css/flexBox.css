@@ -1,0 +1,22 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.contenedor{
+    display: flex;
+    /* // Con esto puedo cambiar la direccion del main axis de la caja que contiene los elementos //
+    flex-direction: column; */
+}
+.caja{
+
+    background-color: blue;
+    height: 120px;
+    width: 120px;
+    margin: 5px;
+
+}
+
