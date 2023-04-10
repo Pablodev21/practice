@@ -7,24 +7,81 @@
 
 }
 
-/* // em como medida flexible, equivale 1em aprox 16-18px // */
-#mainContainer{
 
-    background-color: grey;
-    height: 5em;
-    width: 10em;
+/* // em como medida flexible, equivale 1em aprox 16-18px // */
+.mainContainer{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+
 }
 
 
+.cajaLogin{
+    /* z-index: 1; */
+    display: flex;
+    background-color: grey;
+    width: 50em;
+    height: 35em;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
 
 
+}
 
 
+.cajaCampos{
+   
+    /* display: inline-flex; */
+    display: flex;
+    width:40em;
+    height: 30em;
+    flex-direction: column;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenLogo{
+
+    width: 100px;
+    height: 100px;
+    
+   
+}
+
+.cajaCampos h3{
+
+    display: inline;
+    margin-top: 1em;
+    
+}
+
+.cajaCampos input{
+    margin-top: 1em;
+    display: inline;
+    width: 20em;
+    height: 2em;
+    border-radius: 6px;
+}
+
+.botonInicioSesion{
+
+    margin-top: 500px ;
+    margin-bottom: 5em;
+    background-color: #99c7bd;
+    width: 15em;
+    height: 10em;
+    
+}
 
 
-
-
-/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 600px hacemos algo // */
+/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 600px hacemos algo //
 @media only screen and (max-width:800px){
 
     div{
@@ -32,4 +89,4 @@
         width: 100%;
     }
     
-}
+} */
