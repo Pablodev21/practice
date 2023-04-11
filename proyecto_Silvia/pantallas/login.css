@@ -9,20 +9,21 @@
 
 
 /* // em como medida flexible, equivale 1em aprox 16-18px // */
+
 .mainContainer{
-    background-color: white;
+    background-color: #a4acb4;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-
+    
 }
 
 
 .cajaLogin{
-    /* z-index: 1; */
+
     display: flex;
     background-color: grey;
     width: 50em;
@@ -37,7 +38,7 @@
 
 .cajaCampos{
    
-    /* display: inline-flex; */
+   
     display: flex;
     width:40em;
     height: 30em;
