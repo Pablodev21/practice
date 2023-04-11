@@ -14,7 +14,7 @@ booleano = true;
 
 // Casos especiales de datos Undefined, Nan, Null //
 // Undefined es una variable declarada (let numero;) pero no esta inicializada, es decir, no se le ha asignado aun un valor //
-// Null, si que es un valor, no esta indefinida, aunque su valor es VACIO, de forma intencional //
+// Null, si que es un valor, no esta indefinido, aunque su valor es VACIO, de forma intencional //
 // Nan es algo que se indica cuando se esta fallando en el uso de operadores con diferentes tipos de datos //
 
 
@@ -35,12 +35,24 @@ let variable3, variable4, variable5;
 // prompt es una funcion que recoge info por texto desde la pantalla de chrome //
 
 /*
-let nombre =prompt("Hola, que tal estas?");
+let nombre = prompt("Hola, que tal estas?");
 
 console.log(nombre);
 
 */
 
+
+// Operador unario //
+// typeof
+// Nos regresa el tipo de dato de un valor que le mandemos
+console.log(typeof variable1);
+
+
+// Operadores logicos //
+
+// AND && Devuelve true si ambos valores son true
+// OR || Devuelve true si cualquiera de los valores es true 
+// NOT ! niega y le da la vuelta
 
 
 // Concaquenar //
