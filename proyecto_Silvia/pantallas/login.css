@@ -10,7 +10,7 @@
 
 /* // em como medida flexible, equivale 1em aprox 16-18px // */
 .mainContainer{
-    background-color: black;
+    background-color: white;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -72,7 +72,6 @@
 
 .botonInicioSesion{
 
-    margin-top: 500px ;
     margin-bottom: 5em;
     background-color: #99c7bd;
     width: 15em;
@@ -81,12 +80,39 @@
 }
 
 
-/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 600px hacemos algo //
-@media only screen and (max-width:800px){
+.enlaceProvisional{
+
+    background-color: #99c7bd;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 3px solid black;
+    width: 10em;
+    height: 5em;    
+    margin-right:2px ;
+}
+
+
+
+/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 600px hacemos algo // */
+@media only screen and (max-width:700px){
 
     div{
         display: block;
         width: 100%;
     }
+
+    img{
+        display: block;
+        width: 100%;
+    }
+
+    input{
+
+        display: block;
+        width: 100%;
+    }
     
-} */
+}
