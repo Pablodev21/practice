@@ -10,45 +10,49 @@ var texto_Calculadora ="";
 
 // Funcion de prueba //
 
-function prueba(){
-    var variable = document.getElementsByClassName('numero-Calculadora')[0].value;
+function prueba(valor){
+    var variable = document.getElementsByClassName('numero-Calculadora')[valor].value;
     console.log(variable);
-    // document.getElementsByName()
+
+
+    // document.getElementsByClassName('texto-Resultado').innerHTML=7;
+
 }
 
 // Funcion para recoger los digitos en funcion a la clase en la que este el elemento //
-function recogerNumero(nombre_Clase,texto){
+function recogerNumero(numeroInput){
 
-    let datos = document.getElementsByClassName(`${nombre_Clase}`).value;
-    console.log(datos);
-    if(digito1===null && digito2===null){
+    // let datos = document.getElementsByClassName(`${nombre_Clase}`).value;
+    var valor = document.getElementsByClassName('numero-Calculadora')[numeroInput].value;  
+    if(digito1===null && digito2===null && signo_Operacion!=""){
 
-        digito1=datos;
-        document.getElementsByClassName(nombre_Clase).innerHTML=digito1;
+        digito1=valor;
+        // document.getElementsByClassName(nombre_Clase).innerHTML=digito1;
+
+        console.log(digito1+" ");
 
     }
     else if(digito1!=null && digito2===null ){
 
-        digito2=datos;
-        texto_Calculadora+=digito2;
-        document.getElementsByClassName(texto).innerHTML=texto_Calculadora;
+        digito2=valor;
+        texto_Calculadora+=digito2; 
+        // document.getElementsByClassName('texto-calculadora').innerHTML=texto_Calculadora;
+        
+        console.log(digito2);
     }
-
-    console.log(digito1 + " "+ digito2);
 
 }
 
+function recogerOperador(numeroIndex){
 
-function recoger_Operador(clase){
-
-        let datos = document.getElementsByClassName(clase).value;
+        let datos = document.getElementsByClassName('operador-Calculadora')[numeroIndex].value;
 
         signo_Operacion = datos;
-        texto_Calculadora+=signo_Operacion;
-        document.getElementsByClassName(texto).innerHTML=texto_Calculadora;
+        // texto_Calculadora+=signo_Operacion;
+        // document.getElementsByClassName(texto).innerHTML=texto_Calculadora;
 
         
-        document.getElementsByClassName(texto).innerHTML= texto_Calculadora;
+        // document.getElementsByClassName(texto).innerHTML= texto_Calculadora;
 }
 
 
