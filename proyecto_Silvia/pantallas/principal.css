@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+body{
+
+    background-color: #a4acb4;
+}
+
 /* Estilos para el menú de navegacion */
 .menu{
 
@@ -59,5 +64,7 @@
     height: 100em;
     margin: auto;
     margin-top: 1em;
+    border-radius: 5px;
+    border: 5px solid #99c7bd;
 }
 

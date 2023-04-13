@@ -44,7 +44,8 @@ function recogerNumero(numeroInput){
         var pruebaTexto = document.getElementsByClassName('texto-Resultado');
         
         // Aqui viene pruebaTexto a null
-        pruebaTexto.innerHTML=texto_Calculadora;
+        // pruebaTexto.innerHTML=texto_Calculadora;
+        
         pruebaTexto.value= texto_Calculadora;
         console.log("hoa")
 
