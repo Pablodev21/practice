@@ -6,6 +6,8 @@ var signo_Operacion="";
 
 var texto_Calculadora ="";
 
+var primeroTerminado = false;
+
 
 
 // Funcion de prueba //
@@ -22,23 +24,39 @@ function prueba(valor){
 // Funcion para recoger los digitos en funcion a la clase en la que este el elemento //
 function recogerNumero(numeroInput){
 
+    
+
     // let datos = document.getElementsByClassName(`${nombre_Clase}`).value;
     var valor = document.getElementsByClassName('numero-Calculadora')[numeroInput].value;  
-    if(digito1===null && digito2===null && signo_Operacion!=""){
+    // if(digito1===null && digito2===null && signo_Operacion===""){
 
-        digito1=valor;
-        // document.getElementsByClassName(nombre_Clase).innerHTML=digito1;
+    //     digito1+=valor;
+    //     // document.getElementsByClassName(nombre_Clase).innerHTML=digito1;
 
-        console.log(digito1+" ");
+    //     console.log(digito1+" ");
 
-    }
-    else if(digito1!=null && digito2===null ){
+    // }
 
-        digito2=valor;
-        texto_Calculadora+=digito2; 
-        // document.getElementsByClassName('texto-calculadora').innerHTML=texto_Calculadora;
-        
-        console.log(digito2);
+    // else if(digito1!=null && digito2===null ){
+
+    //     digito2=valor;
+    //     texto_Calculadora+=digito2; 
+    //     // document.getElementsByClassName('texto-calculadora').innerHTML=texto_Calculadora;
+
+    //     console.log(digito2);
+    // }
+
+
+
+
+    if(primeroTerminado===false && signo_Operacion===""){
+
+        digito1+=
+
+
+    }else{
+
+
     }
 
 }
