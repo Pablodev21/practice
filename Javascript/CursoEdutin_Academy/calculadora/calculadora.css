@@ -53,6 +53,7 @@ header{
     text-align: center;
     font-weight: bold;
     font-size: large;
+    background-color: aliceblue;
 }
 
 
@@ -117,7 +118,50 @@ header{
 
 }
 
+.reinicio-Calculadora{
 
+    display: block;
+    width: 25%;
+    height: 110px; 
+    border-radius: 5px;
+    border: 2px solid grey;
+    background-color: darkblue;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: larger;
+    margin: 2px;
+    
+}
+
+.reinicio-Calculadora:hover{
+
+    background-color: aliceblue;
+    color: darkblue;
+
+}
+
+
+.signoIgual-Calculadora{
+
+    display: block;
+    width: 25%;
+    height: 110px; 
+    border-radius: 5px;
+    border: 2px solid grey;
+    background-color: darkblue;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: larger;
+    margin: 2px;
+
+}
+
+.signoIgual-Calculadora:hover{
+
+    background-color: aliceblue;
+    color: darkblue;
+
+}
 
 .operador-Calculadora{
 
