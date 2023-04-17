@@ -10,20 +10,14 @@ var primeroTerminado = false;
 
 var segundoTerminado = false;
 
+var existeOperador = false;
+
+var resultado =0;
 
 
 
+// Porque no se actualiza visualmente ?? //
 
-// Funcion de prueba //
-
-function prueba(valor){
-    var variable = document.getElementsByClassName('numero-Calculadora')[valor].value;
-    console.log(variable);
-
-
-    // document.getElementsByClassName('texto-Resultado').innerHTML=7;
-
-}
 
 // Funcion para recoger los digitos en funcion a la clase en la que este el elemento //
 function recogerNumero(numeroInput){
@@ -33,57 +27,52 @@ function recogerNumero(numeroInput){
     // let datos = document.getElementsByClassName(`${nombre_Clase}`).value;
     var valor = document.getElementsByClassName('numero-Calculadora')[numeroInput].value;
     
-    
-
 
     if(primeroTerminado===false && signo_Operacion===""){
 
         digito1+=valor;
-        texto_Calculadora+=digito1;
-
-        var pruebaTexto = document.getElementsByClassName('texto-Resultado');
-        
-        // Aqui viene pruebaTexto a null
-        // pruebaTexto.innerHTML=texto_Calculadora;
-        
-        pruebaTexto.value= texto_Calculadora;
-        console.log("hoa")
-
-        if(signo_Operacion!=""){
-
-            primeroTerminado=true;
-
-        } 
+        texto_Calculadora=digito1;
 
         
+        document.getElementsByClassName('texto-Resultado')[0].value = texto_Calculadora;
 
 
     }
-    if(primeroTerminado===true){
+    else if(primeroTerminado===true){
 
-        digito2+=document.getElementsByClassName('numero-Calculadora')[numeroInput].value;
+        digito2+=valor;
+        texto_Calculadora+=digito2;
+
+        document.getElementsByClassName('texto-Resultado')[0].value = texto_Calculadora;
+       
+
     }
 
-    console.log("digito 1 " + digito1 + " digito 2 "+ digito2);
 
 }
 
 
     function realizarOperacion (){
 
+        console.log(signo_Operacion);
         comprobarIgual=true;
 
         // Realizar operaciones //
 
-        if (signo_Operacion==="+") texto_Calculadora = digito1+digito2;
+        if (signo_Operacion==="+") {
+            texto_Calculadora = parseFloat(digito1)  + parseFloat(digito2) ;
+            
+        }
 
-        if(signo_Operacion==="-") texto_Calculadora = digito1-digito2;
+        else if(signo_Operacion==="-") {texto_Calculadora = parseFloat(digito1)-parseFloat(digito2);}
 
-        if (signo_Operacion==="*") texto_Calculadora = digito1*digito2;
+        else if (signo_Operacion==="*") {texto_Calculadora = parseFloat(digito1)*parseFloat(digito2);}
 
-        if(signo_Operacion==="/") texto_Calculadora = digito1/digito2;
+        else if(signo_Operacion==="/") {texto_Calculadora = parseFloat(digito1)/parseFloat(digito2);}
 
         else texto_Calculadora= "SYNTAX ERROR";
+
+        document.getElementsByClassName('texto-Resultado')[0].value = texto_Calculadora;
 
     }
 
@@ -92,9 +81,9 @@ function recogerNumero(numeroInput){
 
         // Reinicio de variables //
 
-        digito1 = null;
+        digito1 = "";
 
-        digito2 =  null;
+        digito2 =  "";
 
         signo_Operacion="";
 
@@ -104,22 +93,33 @@ function recogerNumero(numeroInput){
         
         segundoTerminado = false;
 
+        existeOperador= false;
+
+        document.getElementsByClassName('texto-Resultado')[0].value = texto_Calculadora;
+
     }
 
 
     function recogerOperador(numeroIndex){
 
-        let datos = document.getElementsByClassName('operador-Calculadora')[numeroIndex].value;
+        if(existeOperador===false){
 
-        signo_Operacion = datos;
+            let datos = document.getElementsByClassName('operador-Calculadora')[numeroIndex].value;
 
+            signo_Operacion = datos;
+    
+            texto_Calculadora+=signo_Operacion;
+    
+            document.getElementsByClassName('texto-Resultado')[0].value = texto_Calculadora;
+
+            primeroTerminado = true;
+
+            existeOperador= true;
+
+        }
+        
     
 
-        // texto_Calculadora+=signo_Operacion;
-        // document.getElementsByClassName(texto).innerHTML=texto_Calculadora;
-
-        
-        // document.getElementsByClassName(texto).innerHTML= texto_Calculadora;
 }
 
 
