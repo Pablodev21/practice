@@ -1,7 +1,14 @@
 package com.example.proyecto.dto;
 
-import com.example.proyecto.model.User;
+import com.example.proyecto.model.Client;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ClientDTO {
 
     private int id;
@@ -18,28 +25,36 @@ public class ClientDTO {
 
 
     // Método para pasar de model a dto //
-    public User toModel(){
-        User user = new User();
+    public Client toModel(){
+        Client client = new Client();
 
-        user.setId(this.id);
-        user.setLogin(this.login);
-        user.setPassword(this.password);
-        user.setRol(this.rol);
 
-        return user;
+        client.setId(this.id);
+        client.setName(this.name);
+        client.setLastName(this.lastName);
+        client.setPhone(this.phone);
+        client.setDni(this.dni);
+        client.setEmail(this.email);
+
+        return client;
     }
 
 
     // Método para pasar de dto a model //
-    public UserDTO toDTO(User user){
+    public ClientDTO toDTO(Client client){
 
-        this.setId(user.getId());
-        this.setLogin(user.getLogin());
-        this.setPassword(user.getPassword());
-        this.setRol(user.getRol());
+        this.setId(client.getId());
+        this.setName(client.getName());
+        this.setLastName(client.getLastName());
+        this.setPhone(client.getPhone());
+        this.setDni(client.getDni());
+        this.setEmail(client.getDni());
 
 
         return this;
 
     }
+
+
+
 }

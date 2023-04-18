@@ -29,6 +29,7 @@ public class Allergie {
     private String description;
 
 
+
     // Relación con clase cliente //
     @ManyToOne
     @JoinColumn(name = "idCLient", insertable = false, updatable = false)
