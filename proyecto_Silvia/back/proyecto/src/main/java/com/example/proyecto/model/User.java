@@ -32,6 +32,9 @@ public class User {
     private String rol;
 
 
-
-
+    public User(String login, String password, String rol) {
+        this.login = login;
+        this.password = password;
+        this.rol = rol;
+    }
 }
