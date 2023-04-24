@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User,Integer> {
 
 
-    Optional<User> findByLoginIgnoreCase(User user);
+    Optional<User> findByLoginIgnoreCase(String login);
 
     User deleteByLogin(String Login);
 

@@ -16,20 +16,20 @@ public class UserServiceImp implements UserService{
 
     @Transactional
     @Override
-    public User saveUser(User user) {
-        return  repository.save( user);
-    }
-
-
-    @Override
-    public User findByLogin(User user) throws ExceptionApp {
-        Optional<User> userFinded = repository.findByLoginIgnoreCase(user);
+    public User saveUser(User user) throws ExceptionApp {
+        Optional<User> userFinded = repository.findByLoginIgnoreCase(user.getLogin());
         if(!userFinded.isPresent()){
             return repository.save(user);
         }else{
             throw new ExceptionApp("Cant create the user");
         }
     }
+
+    @Override
+    public Optional <User> findByLogin(String login) throws ExceptionApp {
+        return repository.findByLoginIgnoreCase(login);
+    }
+
 
     @Override
     public List<User> findAllUsers() {

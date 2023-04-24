@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -24,16 +25,19 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("")
+    @PostMapping("/createUser")
     public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) throws ExceptionApp{
-        if (checklengthFields(userDTO).equals("") && !usuarioConsultado.isPresent()) {
+
+
+        Optional <User>userChecked = userService.findByLogin(userDTO.getLogin());
+        if (checklengthFields(userDTO).equals("") && !userChecked.isPresent()) {
             User userSaved = userDTO.toModel();
             userService.saveUser(userSaved);
             return ResponseEntity.status(HttpStatus.CREATED).body(userSaved);
         } else if (!checklengthFields(userDTO).equals("")) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Longitud excedida en el/los siguiente/-s campo/-s: " + checklengthFields(userDTO));
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Exceeded length in the following field(s): " + checklengthFields(userDTO));
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El usuario que desea crear contiene un nombre que ya existe");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("The user who you wanted to create already exist");
         }
 
 
