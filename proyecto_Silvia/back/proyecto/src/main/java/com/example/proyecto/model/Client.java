@@ -41,25 +41,6 @@ public class Client {
 
 
 
-
-
-
-    public Client(int id, String name, String lastName, int phone, String dni, String email, List<Observation> observaciones, List<Background> backgrounds, List<Surgerie> surgeries, List<Treatment> treatments, List<Allergie> allergies, List<Evaluation> evaluations) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.phone = phone;
-        this.dni = dni;
-        this.email = email;
-        this.observaciones = observaciones;
-        this.backgrounds = backgrounds;
-        this.surgeries = surgeries;
-        this.treatments = treatments;
-        this.allergies = allergies;
-        this.evaluations = evaluations;
-    }
-
-
     // Relaciones //
 
     // Observaciones //
