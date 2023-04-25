@@ -40,8 +40,9 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("The user who you wanted to create already exist");
         }
 
-
     }
+
+
 
 
     // Función para gestionar el tamaño de los campos introducidos
