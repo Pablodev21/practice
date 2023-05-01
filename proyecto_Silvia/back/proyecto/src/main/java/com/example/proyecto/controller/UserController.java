@@ -7,10 +7,7 @@ import com.example.proyecto.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +22,24 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/createUser")
-    public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) throws ExceptionApp{
 
+
+    @GetMapping ("/login")
+    public ResponseEntity<?> enterLogin(@RequestBody UserDTO userDTO) throws ExceptionApp{
+        Boolean confirmed = userService.getConfirmLogin(userDTO.getLogin(),userDTO.getPassword());
+
+        if(confirmed){
+           return ResponseEntity.status(HttpStatus.ACCEPTED).body("Enter Login OK");
+        }else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User doesnt exist or the password is incorrect");
+        }
+
+    }
+
+
+
+    @PostMapping("/createUser")
+    public ResponseEntity<?> saveUser(@RequestBody UserDTO userDTO) throws ExceptionApp{
 
         Optional <User>userChecked = userService.findByLogin(userDTO.getLogin());
         if (checklengthFields(userDTO).equals("") && !userChecked.isPresent()) {
@@ -41,6 +53,19 @@ public class UserController {
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

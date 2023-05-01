@@ -40,7 +40,7 @@ public class UserServiceImp implements UserService{
 
     @Override
     public User modifyUser(User user) {
-        return null;
+        return repository.save(user);
     }
 
     @Override
@@ -48,9 +48,23 @@ public class UserServiceImp implements UserService{
         return null;
     }
 
+
     @Override
-    public User getConfirmLogin(String login, String password) {
-        return null;
+    public Boolean getConfirmLogin(String login, String password) {
+
+       Optional<User> userChecked = repository.findByLoginIgnoreCase(login);
+       if(userChecked.isPresent()){
+        User user = userChecked.get();
+        if(user.getPassword().equals(password)){
+
+            return true;
+
+        }else{
+            return false;
+        }
+       }else{
+           return false;
+       }
     }
 
     @Override
