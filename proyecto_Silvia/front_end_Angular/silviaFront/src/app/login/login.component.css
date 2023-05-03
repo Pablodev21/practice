@@ -1,0 +1,118 @@
+
+/* // Reincio de propiedadesd de la página para que no dependa del navegador // */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+/* // em como medida flexible, equivale 1em aprox 16-18px // */
+
+.mainContainer{
+    background-color: #a4acb4;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    
+}
+
+
+.cajaLogin{
+
+    display: flex;
+    background-color: grey;
+    width: 50em;
+    height: 35em;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.cajaCampos{
+   
+   
+    display: flex;
+    width:40em;
+    height: 30em;
+    flex-direction: column;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenLogo{
+
+    width: 100px;
+    height: 100px;
+    
+   
+}
+
+.cajaCampos h3{
+
+    display: inline;
+    margin-top: 1em;
+    
+}
+
+.cajaCampos input{
+    margin-top: 1em;
+    display: inline;
+    width: 20em;
+    height: 2em;
+    border-radius: 6px;
+}
+
+.botonInicioSesion{
+
+    margin-bottom: 5em;
+    background-color: #99c7bd;
+    width: 15em;
+    height: 10em;
+    
+}
+
+
+.enlaceProvisional{
+
+    background-color: #99c7bd;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 3px solid black;
+    width: 10em;
+    height: 5em;    
+    margin-right:2px ;
+}
+
+
+
+/* // Con esto le decimos que cuando la pantalla alcance resoluciones menores de 600px hacemos algo // */
+@media only screen and (max-width:700px){
+
+    div{
+        display: block;
+        width: 100%;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+    }
+
+    input{
+
+        display: block;
+        width: 100%;
+    }
+    
+}
