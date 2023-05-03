@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { IndivDataComponent } from './indiv-data/indiv-data.component';
+
 
 
 
@@ -12,7 +14,8 @@ import { PrincipalComponent } from './principal/principal.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    IndivDataComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 *{
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,6 +7,7 @@
 body{
 
     background-color: #a4acb4;
+    
 }
 
 /* Estilos para el menú de navegacion */
@@ -83,10 +83,6 @@ body{
     height: 10%;
     align-items: center;
     border: 2px solid grey ;
-
-
-
-    
 
 }
 
