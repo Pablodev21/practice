@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#menu{
+    
+    height: 100%;
+    width: 20%;
+}
+
+
+
+.menuItem{
+
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    outline: solid red 2px;
+}

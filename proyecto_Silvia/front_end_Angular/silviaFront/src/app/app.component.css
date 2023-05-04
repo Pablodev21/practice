@@ -4,4 +4,7 @@
     box-sizing: border-box;
 }
 
-
+#menuSide{
+    width: 20%;
+    height: 100%;
+}

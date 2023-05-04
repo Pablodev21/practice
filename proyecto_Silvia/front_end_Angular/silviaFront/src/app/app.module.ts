@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { IndivDataComponent } from './indiv-data/indiv-data.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 
 
@@ -15,7 +16,8 @@ import { IndivDataComponent } from './indiv-data/indiv-data.component';
     AppComponent,
     LoginComponent,
     PrincipalComponent,
-    IndivDataComponent
+    IndivDataComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
