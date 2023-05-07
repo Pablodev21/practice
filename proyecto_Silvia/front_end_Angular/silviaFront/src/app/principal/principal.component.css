@@ -69,11 +69,6 @@ body{
     margin-right:2px ;
 }
 
-/* .filtros:visited{
-    
-    text-decoration: none;
-} */
-
 /* Para enlaces NO visitados */
 .filtros:link{
     text-decoration: none;
@@ -88,7 +83,7 @@ body{
 .cuerpoPrincipal{
     background-color: grey;
     width: 98vw;
-    height: 100vh;
+    height: 70vh;
     margin: auto;
     margin-top: 1em;
     border-radius: 5px;

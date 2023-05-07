@@ -14,10 +14,9 @@
 
     <div class="cuerpoPrincipal">
         
-       
             <div class="lista-campos">
                 <div class="campo">Nombre</div>
-                <div class="campo">Apeldivdos</div>
+                <div class="campo">Apellidos</div>
                 <div class="campo">Teléfono</div>
                 <div class="campo">DNI</div>
                 <div class="campo">Email</div>
@@ -28,6 +27,15 @@
                 <div class="campo">Alergías</div>
                 <div class="campo">Evaluación</div> -->
                 <div class="campo">LOPD</div>
+                <div class="campo"> Más Info</div>
+            </div>
+            <div class="lista-campos" *ngFor="let cliente of listaClientes">
+                <div class="campo">{{cliente.name}}</div>
+                <div class="campo">{{cliente.lastName}}</div>
+                <div class="campo">{{cliente.phone}}</div>
+                <div class="campo">{{cliente.dni}}</div>
+                <div class="campo">{{cliente.email}}</div>
+                <div class="campo">{{cliente.lopd}}</div>
                 <div class="campo"> Más Info</div>
             </div>
         </div>
