@@ -2,16 +2,22 @@ package com.example.proyecto.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
+/*
+@Setter
+@Getter
+@ToString
+
+
 @Data
+@EqualsAndHashCode
+*/
 
 public class User {
 
@@ -36,6 +42,39 @@ public class User {
     public User(String login, String password, String rol) {
         this.login = login;
         this.password = password;
+        this.rol = rol;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
         this.rol = rol;
     }
 }

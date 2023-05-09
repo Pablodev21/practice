@@ -2,13 +2,18 @@ package com.example.proyecto.dto;
 
 
 import com.example.proyecto.model.Treatment;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.Date;
+
+/*
+@Setter
+@Getter
+@ToString
+
 
 @Data
+@EqualsAndHashCode
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 public class TreatmentDTO {
@@ -20,8 +25,40 @@ public class TreatmentDTO {
 
     private String description;
 
-    private Date date;
+    private String date;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     // Método para pasar de model a dto //
     public Treatment toModel(){

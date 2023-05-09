@@ -1,12 +1,17 @@
 package com.example.proyecto.dto;
 
 import com.example.proyecto.model.Client;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+/*
+@Setter
+@Getter
+@ToString
 
 
 @Data
+@EqualsAndHashCode
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClientDTO {
@@ -25,6 +30,61 @@ public class ClientDTO {
 
     private int LOPD;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getLOPD() {
+        return LOPD;
+    }
+
+    public void setLOPD(int LOPD) {
+        this.LOPD = LOPD;
+    }
 
     // Método para pasar de model a dto //
     public Client toModel(){

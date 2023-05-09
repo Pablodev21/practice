@@ -2,11 +2,18 @@ package com.example.proyecto.dto;
 
 
 import com.example.proyecto.model.User;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+
+/*
+@Setter
+@Getter
+@ToString
+
 
 @Data
+@EqualsAndHashCode
+*/
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
@@ -19,6 +26,37 @@ public class UserDTO {
 
     private String rol;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 
     // Método para pasar de model a dto //
     public User toModel(){

@@ -4,16 +4,22 @@ package com.example.proyecto.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
 @Table(name = "allergies")
 @NoArgsConstructor
 @AllArgsConstructor
+/*
+@Setter
+@Getter
+@ToString
+
+
 @Data
+@EqualsAndHashCode
+*/
 
 public class Allergie {
 
@@ -37,4 +43,37 @@ public class Allergie {
     @JoinColumn(name = "idCLient", insertable = false, updatable = false)
     @JsonBackReference
     private Client client;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 }

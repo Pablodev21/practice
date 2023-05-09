@@ -3,7 +3,6 @@ package com.example.proyecto.service;
 
 import com.example.proyecto.excepcions.ExceptionApp;
 import com.example.proyecto.model.Background;
-import com.example.proyecto.model.User;
 import com.example.proyecto.repository.BackgroundRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +17,21 @@ public class BackgroundImp implements BackgroundService{
 
     @Autowired
     private BackgroundRepository repository;
+
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional <Background> findById(int Id) {
+        return repository.findById(Id);
+
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Background> findBackgroundByIdClient(Background background) {
+       return repository.findBackgroundByIdClient(background.getIdClient());
+
+    }
 
     @Override
     @Transactional
@@ -38,20 +52,27 @@ public class BackgroundImp implements BackgroundService{
 
     @Override
     @Transactional
-    public Background modifyBackground(Background background) {
-        return null;
-    }
-
-    @Override
-    @Transactional
     public Background deleteBackground(Background background) {
         return null;
     }
 
+
+
+
     @Override
     @Transactional(readOnly = true)
-    public List<Background> findBackgroundToIdClient(int idClient) {
+    public List<Background> findAllByClientId(int idClient) {
+        return repository.findAllByClientId(idClient);
+    }
 
-        return  repository.findByIdClient(idClient);
+    @Override
+    public Background modifyBackgroundByClientId(Background background) {
+        if(repository.existsById(background.getIdClient())){
+            repository.save(background);
+
+        }else{
+
+        }
+        return background;
     }
 }
