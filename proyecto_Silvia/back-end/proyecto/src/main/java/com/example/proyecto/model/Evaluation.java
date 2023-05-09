@@ -1,6 +1,7 @@
 package com.example.proyecto.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -39,5 +40,6 @@ public class Evaluation {
     // Relación con clase cliente //
     @ManyToOne
     @JoinColumn(name = "idCLient", insertable = false, updatable = false)
+    @JsonBackReference
     private Client client;
 }

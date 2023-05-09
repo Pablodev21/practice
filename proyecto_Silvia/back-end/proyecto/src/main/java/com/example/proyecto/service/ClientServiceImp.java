@@ -47,6 +47,11 @@ public class ClientServiceImp implements ClientService {
     }
 
     @Override
+    public List<Client> find16FirstClients() {
+        return repository.find16FirstClients();
+    }
+
+    @Override
     public Client modifyClient(Client client) {
         return null;
     }

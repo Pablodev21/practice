@@ -29,7 +29,7 @@ public class ClientController {
         if(!clients.isEmpty()){
             return ResponseEntity.ok(clients);
         }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Clients found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Clients found");
         }
     }
 
@@ -38,6 +38,19 @@ public class ClientController {
     public ResponseEntity<?> get8ListClients(){
 
         List<Client> clients = clientService.find8FirstClients();
+
+        if(!clients.isEmpty()){
+            return ResponseEntity.ok(clients);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Clients found");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get16Clients")
+    public ResponseEntity<?> get16ListClients(){
+
+        List<Client> clients = clientService.find16FirstClients();
 
         if(!clients.isEmpty()){
             return ResponseEntity.ok(clients);

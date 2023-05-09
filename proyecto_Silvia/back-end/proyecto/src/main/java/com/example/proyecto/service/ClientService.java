@@ -17,6 +17,8 @@ public interface ClientService {
 
     List<Client> find8FirstClients();
 
+    List<Client> find16FirstClients();
+
     Client modifyClient(Client client);
 
     Client deleteClient(Client client);

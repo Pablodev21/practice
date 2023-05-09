@@ -1,6 +1,7 @@
 package com.example.proyecto.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -46,31 +47,37 @@ public class Client {
 
     // Observaciones //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Observation> observations = new ArrayList<>();
 
 
     // Antecedentes //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Background> backgrounds = new ArrayList<>();
 
 
     // Cirugías //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Surgerie> surgeries = new ArrayList<>();
 
 
     // Tratamientos //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Treatment> treatments = new ArrayList<>();
 
 
     // Alergías //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Allergie> allergies = new ArrayList<>();
 
 
     // Evaluaciones //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Evaluation> evaluations = new ArrayList<>();
 
 }
