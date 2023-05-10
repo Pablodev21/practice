@@ -27,14 +27,15 @@
                 <div class="campo">LOPD</div>
                 <div class="campo"> Más Info</div>
             </div>
-            <div class="lista-campos" *ngFor="let cliente of listaClientes">
+            <div class="lista-campos" *ngFor="let cliente of listaClientes; let i = index">
                 <div class="campo">{{cliente.name}}</div>
                 <div class="campo">{{cliente.lastName}}</div>
                 <div class="campo">{{cliente.phone}}</div>
                 <div class="campo">{{cliente.dni}}</div>
                 <div class="campo">{{cliente.email}}</div>
                 <div class="campo">{{cliente.lopd}}</div>
-                <div class="campo"> Más Info</div>
+                <a (click)="poopenPopupWait(); selectedIndex(cliente.id)" class="campoButton"> Más Info</a>
+          
             </div>
         </div>
 

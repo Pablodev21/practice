@@ -8,8 +8,11 @@ import { PrincipalComponent } from './principal/principal.component';
 import { IndivDataComponent } from './indiv-data/indiv-data.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopUpBackgroundComponent } from './pop-up-background/pop-up-background.component'
 
 
 @NgModule({
@@ -18,12 +21,17 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     PrincipalComponent,
     IndivDataComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    PopUpComponent,
+    PopUpBackgroundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

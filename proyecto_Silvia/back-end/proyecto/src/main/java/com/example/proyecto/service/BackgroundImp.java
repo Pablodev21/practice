@@ -31,12 +31,18 @@ public class BackgroundImp implements BackgroundService{
         return repository.findAllIdClient( idClient);
     }
 
-    /*
     @Override
-    public List<Background> findAllByClientId(int idClient) {
-        return null;
+    @Transactional(readOnly = true)
+    public List<Background> get8Backgrounds() {
+        return repository.get8Background();
     }
-    */
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Background> get8IdClient(int idClient) {
+        return repository.get8IdClient(idClient);
+    }
+
     @Override
     @Transactional
     public Background saveBackground(Background background) throws ExceptionApp {
@@ -48,24 +54,7 @@ public class BackgroundImp implements BackgroundService{
             throw new ExceptionApp("Cant create the background");
         }
     }
-    /*
-    @Override
-    public List<Background> findAllbyIdClient(int idClient) throws com.example.proyecto.exceptions.ExceptionApp, ExceptionApp {
-        return null;
-    }
-    */
-    /*
-    @Override
-    public List<Background> findAllbyIdClient(int idClient) throws com.example.proyecto.exceptions.ExceptionApp, ExceptionApp {
-        return null;
-    }
-    */
-    /*
-    @Override
-    public List<Background> findAllbyIdClient(int idClient) throws ExceptionApp {
-        return null;
-    }
-    */
+
     @Override
     @Transactional
     public void deleteBackground(Background background) {
@@ -73,27 +62,4 @@ public class BackgroundImp implements BackgroundService{
     }
 
 
-
-/*
-    @Override
-    @Transactional(readOnly = true)
-    public List<Background> findAllByClientId(int idClient) {
-        return repository.findAllByClientId(idClient);
-    }
-
-    */
-
-    /*
-    @Override
-    public Background modifyBackgroundByClientId(Background background) {
-        if(repository.existsById(background.getIdClient())){
-            repository.save(background);
-
-        }else{
-
-        }
-        return background;
-    }
-
-    */
 }

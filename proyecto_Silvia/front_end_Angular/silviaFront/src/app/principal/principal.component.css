@@ -7,7 +7,7 @@
 body{
 
     background-color: #a4acb4;
-    
+    z-index: 1;
     
     
 }
@@ -56,7 +56,32 @@ body{
 
 }
 
+.campoButton{
+
+    width: 100%;
+    height: 100%;
+    border: #a4acb4 solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #99c7bd;
+
+}
+
+.campoButton :visited{
+    
+    text-decoration: none;
+}
+
+.campoButton:hover{
+
+    background-color: #84c6b5;
+
+}
+
 .filtros{
+    
     background-color: #99c7bd;
     color: white;
     display: flex;
@@ -116,7 +141,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 
 
 

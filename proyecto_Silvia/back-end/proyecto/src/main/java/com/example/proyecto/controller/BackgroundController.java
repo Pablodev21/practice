@@ -38,11 +38,35 @@ public class BackgroundController  {
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getBackgrounds/{idClient}")
     public ResponseEntity<?> findAllIdClient(@PathVariable Integer idClient){
-        List<Background> listaBackgrounds=backgroundService.findAllidClient(idClient);
-        if(!listaBackgrounds.isEmpty()){
-            return ResponseEntity.ok(listaBackgrounds);
+        List<Background> listBackgrounds=backgroundService.findAllidClient(idClient);
+        if(!listBackgrounds.isEmpty()){
+            return ResponseEntity.ok(listBackgrounds);
         }else{
-            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not ");
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get8Backgrounds")
+
+    public ResponseEntity<?> get8Backgrounds(){
+        List<Background> listBackgrounds=backgroundService.get8Backgrounds();
+        if(!listBackgrounds.isEmpty()){
+            return ResponseEntity.ok(listBackgrounds);
+        }else{
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds ");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get8Backgrounds/{idClient}")
+
+    public ResponseEntity<?> get8BackgroundsIdClient(@PathVariable Integer idClient){
+        List<Background> listBackgrounds=backgroundService.get8IdClient(idClient);
+        if(!listBackgrounds.isEmpty()){
+            return ResponseEntity.ok(listBackgrounds);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds ");
         }
     }
 }
