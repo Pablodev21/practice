@@ -16,7 +16,7 @@ export class PrincipalComponent {
 
   public listaClientes: Client[] = [];
   public paramget: number=0;
-
+  public loader: boolean=false;
 
   constructor(
     private http: HttpClient,
@@ -42,10 +42,13 @@ export class PrincipalComponent {
     
   }
 
+  // Método que espera a la recuperacion de datos //
   poopenPopupWait(): void {
+    this.loader = true;
     
     setTimeout(() => {
       this.poopenPopup();
+      this.loader = false;
     }, 2000);
    
   }
