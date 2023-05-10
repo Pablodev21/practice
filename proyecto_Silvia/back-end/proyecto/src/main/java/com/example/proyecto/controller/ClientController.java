@@ -4,7 +4,6 @@ package com.example.proyecto.controller;
 import com.example.proyecto.dto.ClientDTO;
 import com.example.proyecto.excepcions.ExceptionApp;
 import com.example.proyecto.model.Client;
-import com.example.proyecto.model.User;
 import com.example.proyecto.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +19,6 @@ public class ClientController {
 
     @Autowired
     ClientService clientService;
-
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/createClient")
@@ -74,4 +72,19 @@ public class ClientController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Clients found");
         }
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping ("/modify")
+    public ResponseEntity<?> modifyClient(ClientDTO clientDTO) throws ExceptionApp {
+
+        Optional<Client> clientChecked = clientService.findByName(clientDTO.getName());
+        if ( !clientChecked.isPresent()) {
+            Client clientSaved = clientDTO.toModel();
+            clientService.modifyClient(clientSaved);
+            return ResponseEntity.status(HttpStatus.CREATED).body(clientSaved);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Can Not Modify This Client ");
+        }
+    }
+
 }

@@ -23,6 +23,8 @@ public class TreatmentDTO {
 
     private int idClient;
 
+    private String name;
+
     private String description;
 
     private String date;
@@ -42,6 +44,14 @@ public class TreatmentDTO {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -66,6 +76,7 @@ public class TreatmentDTO {
 
         treatment.setId(this.id);
         treatment.setIdClient(this.idClient);
+        treatment.setName(this.name);
         treatment.setDescription(this.description);
         treatment.setDate(this.date);
 
@@ -78,9 +89,9 @@ public class TreatmentDTO {
 
         this.setId(treatment.getId());
         this.setIdClient(treatment.getIdClient());
+        this.setName(treatment.getName());
         this.setDescription(treatment.getDescription());
         this.setDate(treatment.getDate());
-
 
         return this;
 

@@ -4,7 +4,6 @@ package com.example.proyecto.controller;
 import com.example.proyecto.dto.BackgroundDTO;
 import com.example.proyecto.exceptions.ExceptionApp;
 import com.example.proyecto.model.Background;
-import com.example.proyecto.model.Client;
 import com.example.proyecto.service.BackgroundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,38 +36,13 @@ public class BackgroundController  {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/getBackgroundIdClient/{idClient}")
-
-    public ResponseEntity<?> getListBackgroundToClient (@PathVariable Integer idClient){
-
-        List<Background> backgrounds = backgroundService.findAllByClientId(idClient);
-
-        if(!backgrounds.isEmpty()){
-            System.out.println(backgrounds);
-            return ResponseEntity.ok(backgrounds);
+    @GetMapping("/getBackgrounds/{idClient}")
+    public ResponseEntity<?> findAllIdClient(@PathVariable Integer idClient){
+        List<Background> listaBackgrounds=backgroundService.findAllidClient(idClient);
+        if(!listaBackgrounds.isEmpty()){
+            return ResponseEntity.ok(listaBackgrounds);
         }else{
-            System.out.println(backgrounds);
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No backgrounds found");
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not ");
         }
     }
-    /*
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/modify/{idClient}")
-
-    public ResponseEntity<?> updateBackgroundByClientId (@RequestBody BackgroundDTO backgroundDto){
-
-      Optional <Background> backgroundChecked = backgroundService.findBackgroundByIdClient(backgroundDto.getIdClient());
-      Background backgroundModified = new Background();
-        if(backgroundChecked.isPresent()){
-            backgroundModified= backgroundChecked;
-
-           backgroundService.saveBackground(backgroundChecked);
-           return ResponseEntity.ok(backgroundChecked);
-        }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No backgrounds modified ");
-        }
-    }
-    */
-
-
 }

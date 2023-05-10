@@ -27,12 +27,16 @@ public class BackgroundImp implements BackgroundService{
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public Optional<Background> findBackgroundByIdClient(Background background) {
-       return repository.findBackgroundByIdClient(background.getIdClient());
-
+    public List<Background> findAllidClient(int idClient) {
+        return repository.findAllIdClient( idClient);
     }
 
+    /*
+    @Override
+    public List<Background> findAllByClientId(int idClient) {
+        return null;
+    }
+    */
     @Override
     @Transactional
     public Background saveBackground(Background background) throws ExceptionApp {
@@ -44,27 +48,42 @@ public class BackgroundImp implements BackgroundService{
             throw new ExceptionApp("Cant create the background");
         }
     }
-
+    /*
+    @Override
+    public List<Background> findAllbyIdClient(int idClient) throws com.example.proyecto.exceptions.ExceptionApp, ExceptionApp {
+        return null;
+    }
+    */
+    /*
+    @Override
+    public List<Background> findAllbyIdClient(int idClient) throws com.example.proyecto.exceptions.ExceptionApp, ExceptionApp {
+        return null;
+    }
+    */
+    /*
     @Override
     public List<Background> findAllbyIdClient(int idClient) throws ExceptionApp {
         return null;
     }
-
+    */
     @Override
     @Transactional
-    public Background deleteBackground(Background background) {
-        return null;
+    public void deleteBackground(Background background) {
+         repository.delete(background);
     }
 
 
 
-
+/*
     @Override
     @Transactional(readOnly = true)
     public List<Background> findAllByClientId(int idClient) {
         return repository.findAllByClientId(idClient);
     }
 
+    */
+
+    /*
     @Override
     public Background modifyBackgroundByClientId(Background background) {
         if(repository.existsById(background.getIdClient())){
@@ -75,4 +94,6 @@ public class BackgroundImp implements BackgroundService{
         }
         return background;
     }
+
+    */
 }

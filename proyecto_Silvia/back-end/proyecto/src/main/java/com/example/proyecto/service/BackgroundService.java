@@ -12,15 +12,16 @@ public interface BackgroundService {
 
     Background saveBackground(Background background)throws ExceptionApp, com.example.proyecto.excepcions.ExceptionApp;
 
-    List<Background> findAllbyIdClient(int idClient) throws ExceptionApp, com.example.proyecto.excepcions.ExceptionApp;
+    //List<Background> findAllbyIdClient(int idClient) throws ExceptionApp, com.example.proyecto.excepcions.ExceptionApp;
 
-    Background deleteBackground(Background background);
+    void deleteBackground(Background background);
 
     Optional<Background> findById(int Id);
 
-    Optional<Background> findBackgroundByIdClient(Background background);
+    List<Background> findAllidClient(int idClient);
 
-    List<Background> findAllByClientId(int idClient);
+    //Optional<Background> findBackgroundByIdClient(Background background);
 
-    Background modifyBackgroundByClientId ( Background background);
+    //List<Background> findAllByClientId(int idClient);
+
 }

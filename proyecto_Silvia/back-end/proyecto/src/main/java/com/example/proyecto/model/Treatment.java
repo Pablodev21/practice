@@ -23,6 +23,9 @@ public class Treatment {
     @Column(name = "idCLient")
     private int idClient;
 
+    @NotNull
+    @Column(name = "name")
+    private String name;
 
     @NotNull
     @Column(name = "description")
@@ -31,7 +34,6 @@ public class Treatment {
     @NotNull
     @Column(name = "date")
     private String date;
-
 
 
     // Relación con clase cliente //
@@ -54,6 +56,14 @@ public class Treatment {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {

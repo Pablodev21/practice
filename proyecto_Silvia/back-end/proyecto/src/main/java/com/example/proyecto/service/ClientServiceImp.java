@@ -53,7 +53,7 @@ public class ClientServiceImp implements ClientService {
 
     @Override
     public Client modifyClient(Client client) {
-        return null;
+        return repository.save(client);
     }
 
     @Override
