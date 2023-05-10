@@ -6,5 +6,5 @@ export class endPoint{
 
 
     // Backgrounds //
-    
+    static GET_BACKGROUNDS_IDCLIENT: string ='http://localhost:8080/fisioSilvia/backgrounds/get8Backgrounds/';
 }
