@@ -5,6 +5,7 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
 import { DataShareService } from '../data-share.service';
 import { Client } from '../objects/Client';
 import { endPoint } from '../Constants/endPoint';
+import { PopUpWindowComponent } from '../pop-up-window/pop-up-window.component';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class PrincipalComponent {
 
   public listaClientes: Client[] = [];
   public paramget: number=0;
+  public paramgetEdit:number =0;
   public loader: boolean=false;
 
   constructor(
@@ -66,10 +68,12 @@ export class PrincipalComponent {
   // Funcion que abre el popUp en cada boton y le manda el id del cliente seleccionado al popUp //
   poopenPopup(): void {
     
-    var dialogRef = this.dialog.open(PopUpComponent, {
+    // Tengo que mandar una info u otra en funcion a que estoy abriendo //
+    // Para saber si tienes que editar el nombre, el dni, el numero... //
+    var dialogRef = this.dialog.open(PopUpWindowComponent, {
       width: '40%', height:'50%'
     });
-    this.dataShare.setData(this.paramget);
+    this.dataShare.setData(this.paramgetEdit);
    
   }
 }

@@ -29,10 +29,10 @@ export class PopUpComponent {
       }); 
 
 
-      this.http.get<Background[]>(endPoint.GET_BACKGROUNDS_IDCLIENT+this.datos)
-      .subscribe((data: Background[])=>{
-      this.listBackgrounds = data;
-    })
+    //   this.http.get<Background[]>(endPoint.GET_BACKGROUNDS_IDCLIENT+this.datos)
+    //   .subscribe((data: Background[])=>{
+    //   this.listBackgrounds = data;
+    // })
 
 
     }  
@@ -44,7 +44,7 @@ export class PopUpComponent {
   }
 
   changeRoute(){
-    
+
   }
 
 }
