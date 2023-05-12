@@ -76,9 +76,35 @@ body{
 
 .campoButton:hover{
 
+    /* background-color: #899A5A; */
+    background-color: #5AB1AD;
+
+}
+
+.campoButton-edit{
+
+    width: 100%;
+    height: 100%;
+    border: #a4acb4 solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+
+}
+
+.campoButton-edit:visited{
+    
+    text-decoration: none;
+}
+
+.campoButton-edit:hover{
+
     background-color: #84c6b5;
 
 }
+
 
 .filtros{
     
@@ -131,8 +157,7 @@ body{
 }
 
 .campo{
-    /* text-align: center;
-    align-items: center; */
+
     width: 100%;
     height: 100%;
     border: #a4acb4 solid 2px;

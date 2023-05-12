@@ -43,6 +43,8 @@ export class PopUpComponent {
     this.dialogRef.close();
   }
 
-
+  changeRoute(){
+    
+  }
 
 }

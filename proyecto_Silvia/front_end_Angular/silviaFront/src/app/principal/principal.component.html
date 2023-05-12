@@ -27,13 +27,13 @@
                 <div class="campo"> Más Info</div>
             </div>
             <div class="lista-campos" *ngFor="let cliente of listaClientes; let i = index">
-                <div class="campo">{{cliente.name}}</div>
-                <div class="campo">{{cliente.lastName}}</div>
-                <div class="campo">{{cliente.phone}}</div>
-                <div class="campo">{{cliente.dni}}</div>
-                <div class="campo">{{cliente.email}}</div>
-                <div class="campo">{{cliente.lopd}}</div>
-                <a (click)="poopenPopupWait(); selectedIndex(cliente.id)" class="campoButton"> Más Info</a>
+                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.name}}</button>
+                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.lastName}}</button>
+                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.phone}}</button>
+                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.dni}}</button>
+                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.email}}</button>
+                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.lopd}}</button>
+                <a (click)="poopenPopupWait(); selectedIndex(cliente.id)" class="campoButton">  <img src="../../assets/media/wait.gif" alt="Cargando..."></a>
           
             </div>
         </div>

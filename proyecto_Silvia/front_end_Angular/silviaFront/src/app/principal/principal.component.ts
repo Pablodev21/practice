@@ -52,12 +52,22 @@ export class PrincipalComponent {
     }, 2000);
    
   }
+
+  poopenPopupWait2(): void {
+    this.loader = true;
+    
+    setTimeout(() => {
+      this.poopenPopup();
+      this.loader = false;
+    }, 2000);
+   
+  }
   
   // Funcion que abre el popUp en cada boton y le manda el id del cliente seleccionado al popUp //
   poopenPopup(): void {
     
     var dialogRef = this.dialog.open(PopUpComponent, {
-      width: '80%', height:'60%'
+      width: '40%', height:'50%'
     });
     this.dataShare.setData(this.paramget);
    

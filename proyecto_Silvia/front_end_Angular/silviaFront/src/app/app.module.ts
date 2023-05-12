@@ -12,7 +12,8 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { PopUpBackgroundComponent } from './pop-up-background/pop-up-background.component'
+import { PopUpBackgroundComponent } from './pop-up-background/pop-up-background.component';
+import { PopUpWindowComponent } from './pop-up-window/pop-up-window.component'
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PopUpBackgroundComponent } from './pop-up-background/pop-up-background.
     IndivDataComponent,
     SideMenuComponent,
     PopUpComponent,
-    PopUpBackgroundComponent
+    PopUpBackgroundComponent,
+    PopUpWindowComponent
   ],
   imports: [
     BrowserModule,
