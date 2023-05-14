@@ -36,6 +36,10 @@ public class Background {
     private int idClient;
 
     @NotNull
+    @Column(name = "name")
+    private String name;
+
+    @NotNull
     @Column(name = "description")
     private String description;
 
@@ -65,6 +69,14 @@ public class Background {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {

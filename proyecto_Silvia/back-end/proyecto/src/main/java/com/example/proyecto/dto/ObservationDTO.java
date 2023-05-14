@@ -23,10 +23,11 @@ public class ObservationDTO {
 
     private int idClient;
 
+    private String name;
+
     private String description;
 
     private String date;
-
 
     public int getId() {
         return id;
@@ -42,6 +43,14 @@ public class ObservationDTO {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -66,6 +75,7 @@ public class ObservationDTO {
 
         observation.setId(this.id);
         observation.setIdClient(this.idClient);
+        observation.setName(this.name);
         observation.setDescription(this.description);
         observation.setDate(this.date);
 
@@ -78,6 +88,7 @@ public class ObservationDTO {
 
         this.setId(observation.getId());
         this.setIdClient(observation.getIdClient());
+        this.setName(observation.getName());
         this.setDescription(observation.getDescription());
         this.setDate(observation.getDate());
 

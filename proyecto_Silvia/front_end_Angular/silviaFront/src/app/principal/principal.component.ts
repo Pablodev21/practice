@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { DataShareService } from '../data-share.service';
-import { Client } from '../objects/Client';
+import { Cliente } from '../objects/Cliente';
 import { endPoint } from '../Constants/endPoint';
-import { PopUpWindowComponent } from '../pop-up-window/pop-up-window.component';
+
 
 
 @Component({
@@ -15,10 +15,10 @@ import { PopUpWindowComponent } from '../pop-up-window/pop-up-window.component';
 })
 export class PrincipalComponent {
 
-  public listaClientes: Client[] = [];
+  public listaClientes: Cliente[] = [];
   public paramget: number=0;
-  public paramgetEdit:number =0;
-  public loader: boolean=false;
+  public parametro:number =0;
+  public carga: boolean=false;
 
   constructor(
     private http: HttpClient,
@@ -32,7 +32,7 @@ export class PrincipalComponent {
 
     // Llamada a los 8 primeros clientes default //
 
-    this.http.get<Client[]>(endPoint.GET_8_CLIENTS)
+    this.http.get<Cliente[]>(endPoint.GET_8_CLIENTS)
     .subscribe(data=>{
       this.listaClientes = data;
     })
@@ -46,21 +46,21 @@ export class PrincipalComponent {
 
   // Método que espera a la recuperacion de datos //
   poopenPopupWait(): void {
-    this.loader = true;
+    this.carga = true;
     
     setTimeout(() => {
       this.poopenPopup();
-      this.loader = false;
+      this.carga = false;
     }, 2000);
    
   }
 
   poopenPopupWait2(): void {
-    this.loader = true;
+    this.carga = true;
     
     setTimeout(() => {
       this.poopenPopup();
-      this.loader = false;
+      this.carga = false;
     }, 2000);
    
   }
@@ -70,10 +70,10 @@ export class PrincipalComponent {
     
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
     // Para saber si tienes que editar el nombre, el dni, el numero... //
-    var dialogRef = this.dialog.open(PopUpWindowComponent, {
-      width: '40%', height:'50%'
+    var dialogRef = this.dialog.open(PopUpComponent, {
+      width: '50%', height:'70%'
     });
-    this.dataShare.setData(this.paramgetEdit);
+    this.dataShare.setData(this.parametro);
    
   }
 }

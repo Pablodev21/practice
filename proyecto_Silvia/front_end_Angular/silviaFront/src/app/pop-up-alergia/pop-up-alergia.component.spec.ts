@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SideMenuComponent } from './side-menu.component';
+import { PopUpAlergiaComponent } from './pop-up-alergia.component';
 
-describe('SideMenuComponent', () => {
-  let component: SideMenuComponent;
-  let fixture: ComponentFixture<SideMenuComponent>;
+describe('PopUpAlergiaComponent', () => {
+  let component: PopUpAlergiaComponent;
+  let fixture: ComponentFixture<PopUpAlergiaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SideMenuComponent ]
+      declarations: [ PopUpAlergiaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SideMenuComponent);
+    fixture = TestBed.createComponent(PopUpAlergiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

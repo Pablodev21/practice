@@ -6,14 +6,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { IndivDataComponent } from './indiv-data/indiv-data.component';
-import { SideMenuComponent } from './side-menu/side-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PopUpComponent } from './pop-up/pop-up.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { PopUpBackgroundComponent } from './pop-up-background/pop-up-background.component';
-import { PopUpWindowComponent } from './pop-up-window/pop-up-window.component'
+import { PopUpAntecedenteComponent } from './pop-up-antecedente/pop-up-antecedente.component';
+import { PopUpAlergiaComponent } from './pop-up-alergia/pop-up-alergia.component';
+import { PopUpTratamientoComponent } from './pop-up-tratamiento/pop-up-tratamiento.component';
+import { PopUpCirugiaComponent } from './pop-up-cirugia/pop-up-cirugia.component';
+import { PopUpObservacionComponent } from './pop-up-observacion/pop-up-observacion.component';
+import { PopUpEvaluacionComponent } from './pop-up-evaluacion/pop-up-evaluacion.component';
+
+
 
 
 @NgModule({
@@ -22,10 +27,13 @@ import { PopUpWindowComponent } from './pop-up-window/pop-up-window.component'
     LoginComponent,
     PrincipalComponent,
     IndivDataComponent,
-    SideMenuComponent,
     PopUpComponent,
-    PopUpBackgroundComponent,
-    PopUpWindowComponent
+    PopUpAntecedenteComponent,
+    PopUpAlergiaComponent,
+    PopUpTratamientoComponent,
+    PopUpCirugiaComponent,
+    PopUpObservacionComponent,
+    PopUpEvaluacionComponent,
   ],
   imports: [
     BrowserModule,

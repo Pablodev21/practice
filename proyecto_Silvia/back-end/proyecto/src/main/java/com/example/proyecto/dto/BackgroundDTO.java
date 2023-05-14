@@ -25,9 +25,12 @@ public class BackgroundDTO {
 
     private int idClient;
 
+    private String name;
+
     private String description;
 
     private String date;
+
 
     public int getId() {
         return id;
@@ -43,6 +46,14 @@ public class BackgroundDTO {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -67,6 +78,7 @@ public class BackgroundDTO {
 
         background.setId(this.id);
         background.setIdClient(this.idClient);
+        background.setName(this.name);
         background.setDescription(this.description);
         background.setDate(this.date);
 
@@ -80,6 +92,7 @@ public class BackgroundDTO {
 
         this.setId(background.getId());
         this.setIdClient(background.getIdClient());
+        this.setName(background.getName());
         this.setDescription(background.getDescription());
         this.setDate(background.getDate());
 

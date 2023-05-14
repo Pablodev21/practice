@@ -1,12 +1,14 @@
-export class Background {
+export class Observacion {
     id: number;
     idClient: number;
+    name:String;
     description: string;
     date: string;
   
-    constructor(id: number, idClient: number, description: string, date: string) {
+    constructor(id: number, idClient: number, name:String, description: string, date: string) {
       this.id = id;
       this.idClient = idClient;
+      this.name=name;
       this.description = description;
       this.date = date;
     }

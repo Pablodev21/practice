@@ -22,6 +22,8 @@ public class SurgerieDTO {
 
     private int idClient;
 
+    private String name;
+
     private String description;
 
     private String date;
@@ -41,6 +43,14 @@ public class SurgerieDTO {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -65,6 +75,7 @@ public class SurgerieDTO {
 
         surgerie.setId(this.id);
         surgerie.setIdClient(this.idClient);
+        surgerie.setName(this.name);
         surgerie.setDescription(this.description);
         surgerie.setDate(this.date);
 
@@ -77,6 +88,7 @@ public class SurgerieDTO {
 
         this.setId(surgerie.getId());
         this.setIdClient(surgerie.getIdClient());
+        this.setName(surgerie.getName());
         this.setDescription(surgerie.getDescription());
         this.setDate(surgerie.getDate());
 

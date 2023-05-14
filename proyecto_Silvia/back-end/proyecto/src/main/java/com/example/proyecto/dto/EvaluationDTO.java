@@ -23,6 +23,8 @@ public class EvaluationDTO {
 
     private int idClient;
 
+    private String name;
+
     private String description;
 
     private String date;
@@ -42,6 +44,14 @@ public class EvaluationDTO {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -66,6 +76,7 @@ public class EvaluationDTO {
 
         evaluation.setId(this.id);
         evaluation.setIdClient(this.idClient);
+        evaluation.setName(this.name);
         evaluation.setDescription(this.description);
         evaluation.setDate(this.date);
 
@@ -79,6 +90,7 @@ public class EvaluationDTO {
 
         this.setId(evaluation.getId());
         this.setIdClient(evaluation.getIdClient());
+        this.setName(evaluation.getName());
         this.setDescription(evaluation.getDescription());
         this.setDate(evaluation.getDate());
 

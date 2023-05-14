@@ -21,8 +21,9 @@ public class AllergieDTO {
 
     private int idClient;
 
-    private String description;
+    private String name;
 
+    private String description;
 
 
     public int getId() {
@@ -41,6 +42,14 @@ public class AllergieDTO {
         this.idClient = idClient;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -55,6 +64,7 @@ public class AllergieDTO {
 
         allergie.setId(this.id);
         allergie.setIdClient(this.idClient);
+        allergie.setName(this.name);
         allergie.setDescription(this.description);
 
         return allergie;
@@ -66,6 +76,7 @@ public class AllergieDTO {
 
         this.setId(allergie.getId());
         this.setIdClient(allergie.getIdClient());
+        this.setName(allergie.getName());
         this.setDescription(allergie.getDescription());
 
 
