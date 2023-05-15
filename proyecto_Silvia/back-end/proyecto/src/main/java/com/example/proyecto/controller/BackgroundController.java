@@ -53,6 +53,7 @@ public class BackgroundController  {
         List<Background> listBackgrounds=backgroundService.get8Backgrounds();
         if(!listBackgrounds.isEmpty()){
             return ResponseEntity.ok(listBackgrounds);
+
         }else{
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds ");
         }
@@ -69,4 +70,26 @@ public class BackgroundController  {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds ");
         }
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping ("/delete/{id}")
+
+    public ResponseEntity<?> get8BackgroundsIdClient(@PathVariable int id) {
+        Optional<Background> backgroundChecked = backgroundService.findById(id);
+        if (backgroundChecked.isPresent()) {
+            backgroundService.deleteById(id);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(id);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Can Not Delete This Background" );
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping ("/modify/{id}")
+    public ResponseEntity<?> modifyBackground(@RequestBody Background background, @PathVariable int id) {
+
+        this.backgroundService.modifyBackground(background,id);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(background);
+    }
+
 }

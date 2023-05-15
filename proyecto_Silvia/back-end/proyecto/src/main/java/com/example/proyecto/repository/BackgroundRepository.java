@@ -21,4 +21,5 @@ public interface BackgroundRepository extends JpaRepository<Background,Integer> 
     @Query(value = "SELECT * FROM backgrounds WHERE idClient = (?1) LIMIT 8", nativeQuery = true)
     List<Background> get8IdClient(int idClient);
 
+    void deleteById(int id);
 }

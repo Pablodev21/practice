@@ -27,6 +27,7 @@ public class BackgroundImp implements BackgroundService{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Background> findAllidClient(int idClient) {
         return repository.findAllIdClient( idClient);
     }
@@ -45,20 +46,27 @@ public class BackgroundImp implements BackgroundService{
 
     @Override
     @Transactional
-    public Background saveBackground(Background background) throws ExceptionApp {
+    public void deleteById(int id) {
+        repository.deleteById(id);
+    }
 
-        Optional<Background> backgroundFinded = repository.findById(background.getId());
-        if(!backgroundFinded.isPresent()){
-            return repository.save(background);
-        }else{
-            throw new ExceptionApp("Cant create the background");
-        }
+    @Override
+    public void modifyBackground(Background background, int id) {
+        Optional<Background> backgroundChecked = this.repository.findById(id);
+
+           Background backgroundModify= backgroundChecked.get();
+           backgroundModify.setId(background.getId());
+           backgroundModify.setIdClient(background.getIdClient());
+           backgroundModify.setName(background.getName());
+           backgroundModify.setDescription(background.getDescription());
+           backgroundModify.setDate(background.getDate());
+
     }
 
     @Override
     @Transactional
-    public void deleteBackground(Background background) {
-         repository.delete(background);
+    public Background saveBackground(Background background) throws ExceptionApp {
+        return repository.save(background);
     }
 
 
