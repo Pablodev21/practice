@@ -51,6 +51,7 @@ public class BackgroundImp implements BackgroundService{
     }
 
     @Override
+    @Transactional
     public void modifyBackground(Background background, int id) {
         Optional<Background> backgroundChecked = this.repository.findById(id);
 

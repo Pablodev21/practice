@@ -2,7 +2,7 @@ package com.example.proyecto.service;
 
 import com.example.proyecto.exceptions.ExceptionApp;
 import com.example.proyecto.model.Background;
-import org.springframework.data.repository.query.Param;
+
 
 import java.util.List;
 import java.util.Optional;

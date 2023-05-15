@@ -74,7 +74,7 @@ public class BackgroundController  {
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/delete/{id}")
 
-    public ResponseEntity<?> get8BackgroundsIdClient(@PathVariable int id) {
+    public ResponseEntity<?> deleteBackgroundByIdClient(@PathVariable int id) {
         Optional<Background> backgroundChecked = backgroundService.findById(id);
         if (backgroundChecked.isPresent()) {
             backgroundService.deleteById(id);
