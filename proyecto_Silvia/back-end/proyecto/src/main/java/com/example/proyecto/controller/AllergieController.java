@@ -2,12 +2,9 @@ package com.example.proyecto.controller;
 
 
 import com.example.proyecto.dto.AllergieDTO;
-import com.example.proyecto.dto.BackgroundDTO;
 import com.example.proyecto.exceptions.ExceptionApp;
 import com.example.proyecto.model.Allergie;
-import com.example.proyecto.model.Background;
 import com.example.proyecto.service.AllergieService;
-import com.example.proyecto.service.BackgroundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -58,14 +55,14 @@ public class AllergieController {
             return ResponseEntity.ok(listAllergies);
 
         }else{
-            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds ");
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Allergies ");
         }
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/get8Allergies/{idClient}")
 
-    public ResponseEntity<?> get8BackgroundsIdClient(@PathVariable Integer idClient){
+    public ResponseEntity<?> get8AllergiesIdClient(@PathVariable Integer idClient){
         List<Allergie> listAllergies=allergieService.get8IdClient(idClient);
         if(!listAllergies.isEmpty()){
             return ResponseEntity.ok(listAllergies);
