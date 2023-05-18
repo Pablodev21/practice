@@ -14,10 +14,14 @@ import java.util.Optional;
 @Service
 public class BackgroundImp implements BackgroundService{
 
-
     @Autowired
     private BackgroundRepository repository;
 
+    @Override
+    @Transactional
+    public Background saveBackground(Background background) throws ExceptionApp {
+        return repository.save(background);
+    }
 
     @Override
     @Transactional(readOnly = true)
@@ -64,11 +68,7 @@ public class BackgroundImp implements BackgroundService{
 
     }
 
-    @Override
-    @Transactional
-    public Background saveBackground(Background background) throws ExceptionApp {
-        return repository.save(background);
-    }
+
 
 
 }
