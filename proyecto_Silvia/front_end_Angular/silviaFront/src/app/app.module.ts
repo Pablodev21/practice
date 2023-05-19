@@ -17,9 +17,18 @@ import { PopUpTratamientoComponent } from './pop-up-tratamiento/pop-up-tratamien
 import { PopUpCirugiaComponent } from './pop-up-cirugia/pop-up-cirugia.component';
 import { PopUpObservacionComponent } from './pop-up-observacion/pop-up-observacion.component';
 import { PopUpEvaluacionComponent } from './pop-up-evaluacion/pop-up-evaluacion.component';
+import { Routes } from '@angular/router';
+import { HomeComponentComponent } from './home-component/home-component.component';
 
 
+const appRoutes:Routes=[
 
+  {path:'',component:LoginComponent},
+  {path:'/home', component:HomeComponentComponent},
+  {path:'/principal', component:PrincipalComponent},
+  
+
+]
 
 @NgModule({
   declarations: [
@@ -34,6 +43,7 @@ import { PopUpEvaluacionComponent } from './pop-up-evaluacion/pop-up-evaluacion.
     PopUpCirugiaComponent,
     PopUpObservacionComponent,
     PopUpEvaluacionComponent,
+    HomeComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,4 +56,4 @@ import { PopUpEvaluacionComponent } from './pop-up-evaluacion/pop-up-evaluacion.
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

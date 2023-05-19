@@ -9,6 +9,7 @@ import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class ConsultationDTO {
 
     private int id;

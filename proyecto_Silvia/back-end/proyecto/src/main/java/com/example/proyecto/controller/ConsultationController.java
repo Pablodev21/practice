@@ -31,7 +31,7 @@ public class ConsultationController {
             consultationService.saveConsultation(consultationSaved);
             return ResponseEntity.status(HttpStatus.CREATED).body(consultationSaved);
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Can Not Save This Consultation " );
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Can Not Save This Consultation" );
         }
     }
 

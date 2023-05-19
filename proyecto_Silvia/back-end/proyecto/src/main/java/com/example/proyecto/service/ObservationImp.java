@@ -5,10 +5,12 @@ import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Observation;
 import com.example.proyecto.repository.ObservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ObservationImp implements ObservationService{
 
     @Autowired

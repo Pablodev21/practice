@@ -31,7 +31,7 @@ public class BackgroundController  {
             backgroundService.saveBackground(backgroundSaved);
             return ResponseEntity.status(HttpStatus.CREATED).body(backgroundSaved);
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Can Not Save This Background " );
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body ("Can Not Save This Background ");
         }
     }
 
@@ -55,7 +55,7 @@ public class BackgroundController  {
             return ResponseEntity.ok(listBackgrounds);
 
         }else{
-            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds ");
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can Not Find Backgrounds");
         }
     }
 

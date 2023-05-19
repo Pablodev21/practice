@@ -1,6 +1,5 @@
 package com.example.proyecto.repository;
 
-import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Consultation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,7 +12,7 @@ public interface ConsultationRepository extends JpaRepository<Consultation,Integ
 
     Optional<Consultation> findById (int id);
 
-    @Query(value = "SELECT * FROM consultations WHERE idClient = (?1) ", nativeQuery = true)
+    @Query(value = "SELECT * FROM consultations WHERE idClient = (?1)", nativeQuery = true)
     List<Consultation> findAllIdClient(int idClient);
 
     @Query(value="SELECT * FROM consultations LIMIT 8 ", nativeQuery = true)
