@@ -3,15 +3,6 @@ package com.example.proyecto.dto;
 import com.example.proyecto.model.Client;
 import lombok.*;
 
-/*
-@Setter
-@Getter
-@ToString
-
-
-@Data
-@EqualsAndHashCode
-*/
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClientDTO {
@@ -116,7 +107,6 @@ public class ClientDTO {
 
 
         return this;
-
     }
 
 

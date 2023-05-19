@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface TreatmentService {
     Treatment saveTreatment(Treatment treatment)throws ExceptionApp, com.example.proyecto.excepcions.ExceptionApp;
 
-    Optional<Treatment> findById(int Id);
+    Optional<Treatment> findById(int id);
 
     List<Treatment> findAllidClient(int idClient);
 

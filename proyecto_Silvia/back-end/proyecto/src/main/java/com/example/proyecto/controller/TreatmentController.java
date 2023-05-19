@@ -1,10 +1,8 @@
 package com.example.proyecto.controller;
 
 
-import com.example.proyecto.dto.BackgroundDTO;
 import com.example.proyecto.dto.TreatmentDTO;
 import com.example.proyecto.exceptions.ExceptionApp;
-import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Treatment;
 import com.example.proyecto.service.TreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;

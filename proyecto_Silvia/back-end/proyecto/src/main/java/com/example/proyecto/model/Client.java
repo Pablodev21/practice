@@ -3,6 +3,7 @@ package com.example.proyecto.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -12,15 +13,6 @@ import java.util.List;
 @Table(name = "clients")
 @NoArgsConstructor
 @AllArgsConstructor
-/*
-@Setter
-@Getter
-@ToString
-
-
-@Data
-@EqualsAndHashCode
-*/
 
 
 public class Client {
@@ -41,12 +33,14 @@ public class Client {
     @Column(name = "phone")
     private int phone;
 
+    @NotNull
     @Column(name = "dni")
     private String dni;
 
     @Column(name = "email")
     private String email;
 
+    @NotNull
     @Column(name = "LOPD")
     private int LOPD;
 
@@ -87,6 +81,11 @@ public class Client {
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Evaluation> evaluations = new ArrayList<>();
+
+    // Evaluaciones //
+    @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Consultation> consultations = new ArrayList<>();
 
 
     public int getId() {
@@ -191,5 +190,13 @@ public class Client {
 
     public void setEvaluations(List<Evaluation> evaluations) {
         this.evaluations = evaluations;
+    }
+
+    public List<Consultation> getConsultations() {
+        return consultations;
+    }
+
+    public void setConsultations(List<Consultation> consultations) {
+        this.consultations = consultations;
     }
 }
