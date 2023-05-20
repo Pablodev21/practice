@@ -20,17 +20,17 @@ public class UserController {
 
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping ("/login")
-    public ResponseEntity<?> enterLogin(@RequestBody UserDTO userDTO) throws ExceptionApp{
-        Boolean confirmed = userService.getConfirmLogin(userDTO.getLogin(),userDTO.getPassword());
+    @GetMapping ("/login/{nameLogin}/{password}")
+    public ResponseEntity<?> enterLogin(@PathVariable String nameLogin,@PathVariable String password ) throws ExceptionApp{
+        Boolean confirmed = userService.getConfirmLogin(nameLogin,password);
 
         if(confirmed){
-           return ResponseEntity.status(HttpStatus.ACCEPTED).body("Enter Login OK");
+           return ResponseEntity.status(HttpStatus.ACCEPTED).body(confirmed);
         }else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User doesnt exist or the password is incorrect");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(confirmed);
         }
 
     }

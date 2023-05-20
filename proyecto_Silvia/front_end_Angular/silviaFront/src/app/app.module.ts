@@ -24,8 +24,8 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 const appRoutes:Routes=[
 
   {path:'',component:LoginComponent},
-  {path:'/home', component:HomeComponentComponent},
-  {path:'/principal', component:PrincipalComponent},
+  {path:'home', component:HomeComponentComponent},
+  {path:'principal', component:PrincipalComponent},
   
 
 ]
@@ -44,6 +44,7 @@ const appRoutes:Routes=[
     PopUpObservacionComponent,
     PopUpEvaluacionComponent,
     HomeComponentComponent,
+
   ],
   imports: [
     BrowserModule,

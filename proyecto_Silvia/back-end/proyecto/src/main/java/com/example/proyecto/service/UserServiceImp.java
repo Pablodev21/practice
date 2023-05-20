@@ -63,7 +63,6 @@ public class UserServiceImp implements UserService{
        if(userChecked.isPresent()){
         User user = userChecked.get();
         if(user.getPassword().equals(password)){
-
             return true;
 
         }else{

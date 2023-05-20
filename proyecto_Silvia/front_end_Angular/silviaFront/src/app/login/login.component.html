@@ -1,15 +1,19 @@
-
+<div class="container-loader" *ngIf="carga">
+  <div class="loader" >
+      <img src="../../assets/media/wait.gif" alt="Cargando...">
+    </div>
+</div>
   <div class="mainContainer">
     <div class="cajaLogin">
 
         <div class="cajaCampos">
             <img class="imagenLogo" src="../../assets/media/logo_conFondo.png" alt="logo">
-            <h3>Nombre de Usuario</h3>
-            <input class="campoNombre" type="text">
-            <h3 class="tituloContrasena">Contraseña</h3>
-            <input class="campoContrasena" type="password">
-            <input class="botonInicioSesion" type="submit" value="LOGIN">
-            <a class="enlaceProvicional" href="principal.component.html"> LOGIN PROVISIONAL</a> 
+            <h3 class="titulos">Nombre de Usuario</h3>
+            <input id="nombre" class="campoNombre" type="text">
+            <h3 class="titulos">Contraseña</h3>
+            <input id="contrasena" class="campoContrasena" type="password">
+            <button  class="botonInicioSesion" (click)="entrar()">LOGIN</button>
+     
         </div>
     </div>
   </div>  
