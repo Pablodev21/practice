@@ -1,27 +1,69 @@
 *{
     padding: 0%;
     box-sizing: border-box;
+    font-weight: bold;
+    
 }
-
-.filaInfo{
+.contenedor{
     background-color: grey;
-    width: 98vw;
-    height: 70vh;
-    margin: auto;
-    margin-top: 1em;
-    border-radius: 5px;
-    border: 5px solid #99c7bd;
-
+    width: 100%;
+    height: 100%;
+    
 }
 
-.titulo{
-
-  width: 100px;
-  height: 50px;
-  background-color: #eaeaea;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-}
+ .container {
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin: 50px auto;
+  }
+  
+  .titulo{
+    margin-bottom: 100px;
+    margin-left: 20px;
+    
+  }
+  .campo-editable {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .campo-editable label {
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 100px;
+  }
+  
+  .campo-editable input {
+    width: 200px;
+    height: 30px;
+    border-radius: 2px;
+  }
+  
+  .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 5px ;
+  }
+  
+  .eliminarPaciente {
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+    width: 300px;
+    height: 20px;
+  }
+  
+  .confirmarCambios {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 2px;
+    width: 300px;
+    height: 20px;
+  }

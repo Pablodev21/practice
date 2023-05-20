@@ -6,6 +6,7 @@ import { DataShareService } from '../data-share.service';
 import { Cliente } from '../objects/Cliente';
 import { endPoint } from '../Constants/endPoint';
 import { ServicioCache } from '../Cache/Servicio-Cache';
+import { EditarComponentComponent } from '../editar-component/editar-component.component';
 
 
 
@@ -20,6 +21,7 @@ export class PrincipalComponent {
   public paramget: number=0;
   public parametro:number =0;
   public carga: boolean=false;
+  public client!: Cliente;
 
   constructor(
     private http: HttpClient,
@@ -43,6 +45,7 @@ export class PrincipalComponent {
   // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
   selectedIndex(id:number){
       this.paramget= id;
+     
   }
 
   // Método que espera a la recuperacion de datos //
@@ -59,11 +62,11 @@ export class PrincipalComponent {
    // Método que espera a la recuperacion de datos //
    poopenPopupEditar(): void {
     this.carga = true;
-    
+    this.escogerCliente();
     setTimeout(() => {
-      this.poopenPopup();
+      this.abrirPopUpEditar();
       this.carga = false;
-    }, 2000);
+    }, 1000);
    
   }
 
@@ -87,6 +90,26 @@ export class PrincipalComponent {
     });
     this.dataShare.setData(this.parametro);
    
+  }
+
+  abrirPopUpEditar(): void {
+    
+    // Tengo que mandar una info u otra en funcion a que estoy abriendo //
+    // Para saber si tienes que editar el nombre, el dni, el numero... //
+    var dialogRef = this.dialog.open(EditarComponentComponent, {
+      width: '50%', height:'70%'
+    });
+    this.dataShare.setData(this.parametro);
+   
+  }
+
+  escogerCliente(){
+    console.log(this.paramget);
+    for(let i =0;i< this.listaClientes.length;i++){
+      if(this.paramget==this.listaClientes[i].id){
+        this.Cache.set('client',this.listaClientes[i]);
+      }
+    }
   }
 }
 
