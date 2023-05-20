@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { endPoint } from '../Constants/endPoint';
+import { ServicioCache } from '../Cache/Servicio-Cache';
 
 
 @Component({
@@ -19,7 +20,11 @@ export class LoginComponent {
 
 
 
-  constructor(private router:Router,private http: HttpClient,){}
+  constructor(
+    private router:Router,private http: HttpClient,
+    private Cache: ServicioCache
+    
+    ){}
 
 
   ngOnInit(){
@@ -49,6 +54,7 @@ export class LoginComponent {
 
   entrar(){
     if(this.confirmado){
+
       this.router.navigate(['principal'])
     }else{
       //Mostrar error //
@@ -62,7 +68,6 @@ export class LoginComponent {
       if(data){
         this.confirmado=true;
       }
-      console.log(data +' valor de data recuperada');
     })
   }
 

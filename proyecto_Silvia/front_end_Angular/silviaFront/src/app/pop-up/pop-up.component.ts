@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DataShareService } from '../data-share.service';
-import { Antecedente } from '../objects/Antecedente';
-import { endPoint } from '../Constants/endPoint';
 import { HttpClient } from '@angular/common/http';
 import { PopUpAntecedenteComponent } from '../pop-up-antecedente/pop-up-antecedente.component';
 import { PopUpCirugiaComponent } from '../pop-up-cirugia/pop-up-cirugia.component';

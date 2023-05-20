@@ -5,6 +5,7 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
 import { DataShareService } from '../data-share.service';
 import { Cliente } from '../objects/Cliente';
 import { endPoint } from '../Constants/endPoint';
+import { ServicioCache } from '../Cache/Servicio-Cache';
 
 
 
@@ -23,7 +24,8 @@ export class PrincipalComponent {
   constructor(
     private http: HttpClient,
     public dialog: MatDialog,
-    private dataShare: DataShareService
+    private dataShare: DataShareService,
+    private Cache: ServicioCache
 
 
   ){}

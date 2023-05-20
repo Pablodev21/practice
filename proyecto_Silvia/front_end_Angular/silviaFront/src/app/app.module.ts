@@ -19,6 +19,9 @@ import { PopUpObservacionComponent } from './pop-up-observacion/pop-up-observaci
 import { PopUpEvaluacionComponent } from './pop-up-evaluacion/pop-up-evaluacion.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { EditarComponentComponent } from './editar-component/editar-component.component';
+import { VerificarComponentComponent } from './verificar-component/verificar-component.component';
+import { VerificarComponent } from './verificar/verificar.component';
 
 
 const appRoutes:Routes=[
@@ -44,6 +47,9 @@ const appRoutes:Routes=[
     PopUpObservacionComponent,
     PopUpEvaluacionComponent,
     HomeComponentComponent,
+    EditarComponentComponent,
+    VerificarComponentComponent,
+    VerificarComponent,
 
   ],
   imports: [
