@@ -1,0 +1,27 @@
+*{
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.filaInfo{
+    background-color: grey;
+    width: 98vw;
+    height: 70vh;
+    margin: auto;
+    margin-top: 1em;
+    border-radius: 5px;
+    border: 5px solid #99c7bd;
+
+}
+
+.titulo{
+
+  width: 100px;
+  height: 50px;
+  background-color: #eaeaea;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}

@@ -43,11 +43,21 @@ export class PrincipalComponent {
   // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
   selectedIndex(id:number){
       this.paramget= id;
-    
   }
 
   // Método que espera a la recuperacion de datos //
   poopenPopupWait(): void {
+    this.carga = true;
+    
+    setTimeout(() => {
+      this.poopenPopup();
+      this.carga = false;
+    }, 2000);
+   
+  }
+
+   // Método que espera a la recuperacion de datos //
+   poopenPopupEditar(): void {
     this.carga = true;
     
     setTimeout(() => {

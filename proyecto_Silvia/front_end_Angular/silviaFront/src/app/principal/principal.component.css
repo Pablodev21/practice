@@ -47,7 +47,7 @@ body{
 }
 
 .campoButton{
-    width: 100%;
+    width: 300px;
     height: 100%;
     border: #a4acb4 solid 2px;
     display: flex;
@@ -67,7 +67,7 @@ body{
 }
 
 .campoButton-edit{
-    width: 100%;
+    width: 300px;
     height: 100%;
     border: #a4acb4 solid 2px;
     display: flex;
@@ -86,7 +86,6 @@ body{
     background-color: #84c6b5;
 
 }
-
 
 .filtros{
     background-color: #99c7bd;
@@ -137,7 +136,7 @@ body{
 }
 
 .campo{
-    width: 100%;
+    width: 300px;
     height: 100%;
     border: #a4acb4 solid 2px;
     display: flex;
@@ -172,5 +171,28 @@ body{
     width: 50px;
 }
 
+.infoIconEditar{
+    width: 40px;
+}
 
+
+.check{
+
+    width: 50px;
+}
+
+.check:visited{
+    text-decoration: none;
+}
+
+.check:hover{
+    background-color: #84c6b5;
+
+}
+
+.iconoEditar{
+    width:30px ;
+    height: 20px;
+    background-color: transparent;
+}
 

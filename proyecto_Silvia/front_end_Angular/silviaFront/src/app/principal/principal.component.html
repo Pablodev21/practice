@@ -18,6 +18,7 @@
     <div class="cuerpoPrincipal">
         
             <div class="lista-campos">
+                <div class="check"></div>
                 <div class="campo">Nombre</div>
                 <div class="campo">Apellidos</div>
                 <div class="campo">Teléfono</div>
@@ -27,6 +28,8 @@
                 <div class="campo"> Más Info</div>
             </div>
             <div class="lista-campos" *ngFor="let cliente of listaClientes; let i = index">
+                <!-- <button class="check"><img class="iconoEditar" src="../../assets/media/iconoEditar.png"></button> -->
+                <a (click)="poopenPopupWait(); selectedIndex(cliente.id)" class="check"> <img class="infoIconEditar" src="../../assets/media/iconoEditar.png"></a>
                 <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.name}}</button>
                 <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.lastName}}</button>
                 <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.phone}}</button>
