@@ -43,9 +43,15 @@ export class PrincipalComponent {
   }
 
   // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
-  selectedIndex(id:number){
-      this.paramget= id;
-     
+  // selectedIndex(id:number){
+  //     this.paramget= id;
+  // }
+
+  selectedIndex(id: any): Promise<void> {
+    return new Promise<void>((resolve) => {
+      this.paramget = id;
+      resolve();
+    });
   }
 
   // Método que espera a la recuperacion de datos //
@@ -62,7 +68,7 @@ export class PrincipalComponent {
    // Método que espera a la recuperacion de datos //
    poopenPopupEditar(): void {
     this.carga = true;
-    this.escogerCliente();
+
     setTimeout(() => {
       this.abrirPopUpEditar();
       this.carga = false;
@@ -103,13 +109,16 @@ export class PrincipalComponent {
    
   }
 
-  escogerCliente(){
+  async escogerCliente(){
+    await this.selectedIndex(Cliente.id); 
     console.log(this.paramget);
+    
     for(let i =0;i< this.listaClientes.length;i++){
       if(this.paramget==this.listaClientes[i].id){
         this.Cache.set('client',this.listaClientes[i]);
       }
     }
+
   }
 }
 

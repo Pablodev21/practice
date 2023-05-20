@@ -25,10 +25,14 @@ constructor(
   
 
 
-  onInit(){
-    this.cliente=this.Cache.get('cliente');
+  ngOnInit(){
+    this.cliente=this.Cache.get('client');
     this.nombre = this.cliente.name;
-    console.log(this.nombre + 'nombre cliente');
+    this.apellido = this.cliente.lastName;
+    this.dni = this.cliente.dni;
+    this.email=this.cliente.email;
+    this.lopd= this.cliente.lopd;
+
   }
 
 

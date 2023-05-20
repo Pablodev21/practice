@@ -29,7 +29,7 @@
             </div>
             <div class="lista-campos" *ngFor="let cliente of listaClientes; let i = index">
                 <!-- <button class="check"><img class="iconoEditar" src="../../assets/media/iconoEditar.png"></button> -->
-                <a (click)="poopenPopupEditar(); selectedIndex(cliente.id)" class="check"> <img class="infoIconEditar" src="../../assets/media/iconoEditar.png"></a>
+                <a (click)=" escogerCliente(); poopenPopupEditar(); selectedIndex(cliente.id)" class="check"> <img class="infoIconEditar" src="../../assets/media/iconoEditar.png"></a>
                 <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.name}}</button>
                 <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.lastName}}</button>
                 <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.phone}}</button>

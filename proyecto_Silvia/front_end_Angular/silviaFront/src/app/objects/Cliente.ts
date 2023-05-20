@@ -1,12 +1,15 @@
 
  export class Cliente {
+  static id(id: any) {
+    throw new Error('Method not implemented.');
+  }
   id: number;
   name: string;
   lastName: string;
   phone: string;
   dni: string;
   email: string;
-  lopd: boolean;
+  lopd: number;
 
   constructor(
     id: number,
@@ -15,7 +18,7 @@
     phone: string,
     dni: string,
     email: string,
-    lopd: boolean
+    lopd: number
   ) {
     this.id = id;
     this.name = name;
