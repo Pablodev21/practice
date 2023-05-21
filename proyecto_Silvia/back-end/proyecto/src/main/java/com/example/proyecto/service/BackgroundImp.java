@@ -66,6 +66,7 @@ public class BackgroundImp implements BackgroundService{
            backgroundModify.setDescription(background.getDescription());
            backgroundModify.setDate(background.getDate());
 
+           this.repository.save(backgroundModify);
     }
 
 

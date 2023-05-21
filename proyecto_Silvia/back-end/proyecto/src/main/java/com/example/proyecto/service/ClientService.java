@@ -13,15 +13,17 @@ public interface ClientService {
 
     Optional findByName(String client) throws ExceptionApp;
 
+    Optional findById (int id);
+
     List<Client> findAllClients();
 
     List<Client> find8FirstClients();
 
     List<Client> find16FirstClients();
 
-    Client modifyClient(Client client);
+    void modifyClient(Client client, int id);
 
-    Client deleteClient(Client client);
+    void deleteClient(int id);
 
     Client getClient();
 

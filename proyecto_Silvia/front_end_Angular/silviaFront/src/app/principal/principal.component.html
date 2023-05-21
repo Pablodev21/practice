@@ -30,12 +30,12 @@
             <div class="lista-campos" *ngFor="let cliente of listaClientes; let i = index">
                 <!-- <button class="check"><img class="iconoEditar" src="../../assets/media/iconoEditar.png"></button> -->
                 <a (click)=" escogerCliente(); poopenPopupEditar(); selectedIndex(cliente.id)" class="check"> <img class="infoIconEditar" src="../../assets/media/iconoEditar.png"></a>
-                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.name}}</button>
-                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.lastName}}</button>
-                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.phone}}</button>
-                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.dni}}</button>
-                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.email}}</button>
-                <button (click)="poopenPopupWait2();" class="campoButton-edit" >{{cliente.lopd}}</button>
+                <button class="campoButton-edit" >{{cliente.name}}</button>
+                <button class="campoButton-edit" >{{cliente.lastName}}</button>
+                <button class="campoButton-edit" >{{cliente.phone}}</button>
+                <button class="campoButton-edit" >{{cliente.dni}}</button>
+                <button class="campoButton-edit" >{{cliente.email}}</button>
+                <button class="campoButton-edit" >{{cliente.lopd}}</button>
                 <a (click)="poopenPopupWait(); selectedIndex(cliente.id)" class="campoButton">  <img class="infoIcon" src="../../assets/media/infoS.png" alt="Información"></a>
             </div>
         </div>

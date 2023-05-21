@@ -11,6 +11,8 @@ public interface ClientRepository extends JpaRepository <Client,Integer>{
 
     Optional<Client> findByNameIgnoreCase(String name);
 
+    Optional<Client> findById(int id);
+
     List<Client> findAll();
 
     @Query(value = "SELECT * FROM clients LIMIT 8", nativeQuery = true)

@@ -6,7 +6,7 @@
   id: number;
   name: string;
   lastName: string;
-  phone: string;
+  phone: number;
   dni: string;
   email: string;
   lopd: number;
@@ -15,7 +15,7 @@
     id: number,
     name: string,
     lastName: string,
-    phone: string,
+    phone: number,
     dni: string,
     email: string,
     lopd: number

@@ -6,6 +6,9 @@ export class endPoint{
 
     // Clientes //
     static GET_8_CLIENTS: string = 'http://localhost:8080/fisioSilvia/client/get8Clients';
+    static MOD_CLIENT:string='http://localhost:8080/fisioSilvia/client/modify';
+    static DEL_CLIENT:string='http://localhost:8080/fisioSilvia/client/delete';
+    
 
 
     // Backgrounds //

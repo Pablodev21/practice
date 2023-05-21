@@ -33,14 +33,12 @@ public class Client {
     @Column(name = "phone")
     private int phone;
 
-    @NotNull
-    @Column(name = "dni")
+    @Column(name = "DNI")
     private String dni;
 
     @Column(name = "email")
     private String email;
 
-    @NotNull
     @Column(name = "LOPD")
     private int LOPD;
 

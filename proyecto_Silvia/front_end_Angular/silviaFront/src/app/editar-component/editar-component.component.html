@@ -17,12 +17,16 @@
     <div class="titulo">Email</div>
     <div class="titulo">LOPD</div>
 </div> -->
-
+<div class="container-loader" *ngIf="carga">
+  <div class="loader" >
+      <img src="../../assets/media/wait.gif" alt="Cargando...">
+    </div>
+</div>
 
 <div class="contenedor">
 
     
-        <button class="cerrar">Cerrar</button>
+        <button (click)="cerrarVentana()" class="cerrar">Cerrar</button>
         <h2 class="titulo" >Editar Paciente</h2>
         <div class="campo-editable">
           <label for="nombre">Nombre:  {{nombre}} </label>
@@ -32,6 +36,10 @@
         <div class="campo-editable">
           <label for="apellidos">Apellidos:  {{apellido}}</label>
           <input type="text" id="apellidos">
+        </div>
+        <div class="campo-editable">
+          <label for="dni">Teléfono:  {{telefono}}</label>
+          <input type="text" id="telefono">
         </div>
         <div class="campo-editable">
           <label for="dni">DNI:  {{dni}}</label>
@@ -45,8 +53,9 @@
           <label for="lopd">LOPD:  {{lopd}}</label>
           <input type="text" id="lopd">
         </div>
-        <button class="eliminarPaciente">Eliminar Paciente</button>
-        <button class="confirmarCambios">Confirmar</button>
+        <button (click)="modificarClient()" class="confirmarCambios">Confirmar</button>
+        <button (click)="eliminarCliente()" class="eliminarPaciente">Eliminar Paciente</button>
+        
 
    
 </div>

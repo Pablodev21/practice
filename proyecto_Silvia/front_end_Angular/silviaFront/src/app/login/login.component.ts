@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { endPoint } from '../Constants/endPoint';
 import { ServicioCache } from '../Cache/Servicio-Cache';
+import { Cliente } from '../objects/Cliente';
 
 
 @Component({
@@ -28,6 +29,14 @@ export class LoginComponent {
 
 
   ngOnInit(){
+
+     // Llamada a los 8 primeros clientes default //
+
+     this.http.get<Cliente[]>(endPoint.GET_8_CLIENTS)
+     .subscribe(data=>{
+       this.Cache.set('listaClientes',data);
+     })
+     
     const nombreElemento = document.getElementById('nombre') as HTMLInputElement;
     nombreElemento.addEventListener('blur', () => {
     this.nombre=nombreElemento.value;

@@ -1,6 +1,7 @@
 package com.example.proyecto.service;
 
 import com.example.proyecto.excepcions.ExceptionApp;
+import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Client;
 import com.example.proyecto.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,11 @@ public class ClientServiceImp implements ClientService {
     }
 
     @Override
+    public Optional findById(int id) {
+        return repository.findById(id);
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public List<Client> findAllClients() {
         return repository.findAll();
@@ -52,13 +58,24 @@ public class ClientServiceImp implements ClientService {
     }
 
     @Override
-    public Client modifyClient(Client client) {
-        return repository.save(client);
+    public void modifyClient(Client client,int id) {
+        Optional<Client> clientChecked = this.repository.findById(id);
+
+        Client clientModify= clientChecked.get();
+
+        clientModify.setName(client.getName());
+        clientModify.setLastName(client.getLastName());
+        clientModify.setPhone(client.getPhone());
+        clientModify.setDni(client.getDni());
+        clientModify.setEmail(client.getEmail());
+        clientModify.setLOPD(client.getLOPD());
+
+        this.repository.save(clientModify);
     }
 
     @Override
-    public Client deleteClient(Client client) {
-        return null;
+    public void deleteClient(int id) {
+        repository.deleteById(id);
     }
 
     @Override

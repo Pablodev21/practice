@@ -40,6 +40,8 @@ export class PrincipalComponent {
     .subscribe(data=>{
       this.listaClientes = data;
     })
+
+    this.listaClientes = this.Cache.get('listaClientes');
   }
 
   // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
@@ -101,7 +103,6 @@ export class PrincipalComponent {
   abrirPopUpEditar(): void {
     
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
-    // Para saber si tienes que editar el nombre, el dni, el numero... //
     var dialogRef = this.dialog.open(EditarComponentComponent, {
       width: '50%', height:'70%'
     });
@@ -110,12 +111,12 @@ export class PrincipalComponent {
   }
 
   async escogerCliente(){
-    await this.selectedIndex(Cliente.id); 
-    console.log(this.paramget);
-    
+    await this.selectedIndex(Cliente.id);
+
     for(let i =0;i< this.listaClientes.length;i++){
       if(this.paramget==this.listaClientes[i].id){
         this.Cache.set('client',this.listaClientes[i]);
+        console.log(this.Cache.get('client'));
       }
     }
 
