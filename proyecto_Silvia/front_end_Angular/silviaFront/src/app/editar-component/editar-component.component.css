@@ -30,44 +30,85 @@
 
 .campo-editable label {
   width: fit-content;
+  font-weight: bold;
   margin-right: 10px;
   margin-left: 100px;
+  margin-bottom: 10px;
 }
 
 .campo-editable input {
+  position: absolute;
   width: 200px;
   height: 30px;
   border-radius: 2px;
-  margin-left: 100px;
+  margin-bottom: 10px;
+  margin-left: 400px;
 }
 
 .cerrar {
-  position: absolute;
-  top: 10px;
-  right: 5px ;
+  font-size: 16px; 
+	text-transform: uppercase; 
+	font-weight: bold; 
+	color: #ffffff; 
+	border-radius: 5px; 
+	letter-spacing: 2px; 
+	background-color: #99c7bd; 
+	padding: 18px 30px; 
+	position: fixed;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+  margin-left: 50%;
+  margin-top: 35%;
+}
+.cerrar:hover {
+	background-color: red; 
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
 }
 
-.eliminarPaciente {
-  margin-left: 100px;
-  margin-right: 10px;
-  margin-top: 20px;
+.botones{
+  margin-left: 300px;
+  margin-top: 50px;
+  display: flex;
+  width: 30em;
+  height: 5em;
+}
+
+.eliminarPaciente{
+  background-color: #99c7bd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid grey;
+  width: 10em;
+  height: 5em; 
+
+}
+
+.eliminarPaciente:hover{
   background-color: red;
-  color: white;
-  border-radius: 2px;
-  width: 300px;
-  height: 20px;
 }
 
-.confirmarCambios {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 20px;
-  background-color: green;
+.confirmarCambios{
+  background-color: #99c7bd;
   color: white;
-  border-radius: 2px;
-  width: 300px;
-  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid grey;
+  width: 10em;
+  height: 5em;
+  margin-right: 100px;    
 }
+
+.confirmarCambios:hover{
+  background-color: #84c6b5;
+}
+
 .container-loader{
   position: fixed;
   width: 30%;

@@ -128,11 +128,7 @@ export class PrincipalComponent {
   recargarInfo(){
     var resultado = window.confirm('¿Quieres recargar la información mostrada?');
     if(resultado==true){
-      this.carga=true;
-      setTimeout(()=>{
-        this.router.navigate(['principal']);
-        this.carga = false;
-      },1000)
+      this.ngOnInit();
     }
   }
 }

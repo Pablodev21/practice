@@ -51,12 +51,13 @@ constructor(
     this.email=this.cliente.email;
     this.lopd= this.cliente.lopd;
 
+
     this.recogerCampos();
   }
 
   modificarClient(){
 
-    // await this.recogerCampos();
+
     var resultado = window.confirm('¿Estás seguro/a de realizar los cambios?')
     if(resultado==true){
 
@@ -77,39 +78,36 @@ constructor(
       
       const nombreElemento = document.getElementById('nombre') as HTMLInputElement;
     nombreElemento.addEventListener('blur', () => {
-      // if(nombreElemento.value!=''){
-      //   this.clienteModificado.name=nombreElemento.value;
-      // }else{
-      //   console.log('nombre vacio '+nombreElemento.value);
-      // }  
-    
+      if(nombreElemento.value.length!=0){
         this.clienteModificado.name=nombreElemento.value;
+      }else{
+        this.clienteModificado.name=this.cliente.name;
+      }  
+      console.log(this.clienteModificado.name);
+
       
 
     });
 
     const apellidosElemento = document.getElementById('apellidos') as HTMLInputElement;
     apellidosElemento.addEventListener('blur', () => {
-      // if(apellidosElemento.value!=''){
-      //   this.clienteModificado.lastName=apellidosElemento.value;
-      // }else{
-      //   console.log('apellidos vacio '+apellidosElemento.value);
-      // }  
-      
+      if(apellidosElemento.value.length!=0){
         this.clienteModificado.lastName=apellidosElemento.value;
-     
-      
+      }else{
+        this.clienteModificado.lastName=this.cliente.lastName;
+      }  
+      console.log(this.clienteModificado.lastName);
       
     });
     const telefonoElemento = document.getElementById('telefono') as HTMLInputElement;
     telefonoElemento.addEventListener('blur', () => {
 
-      // if(dniElemento.value!=''){
-      //   this.clienteModificado.dni = dniElemento.value;
-      // }else{
-      //   console.log('dni vacio '+ dniElemento.value);
-      // }
-      this.clienteModificado.phone = parseInt(telefonoElemento.value);
+      if(dniElemento.value.length!=0){
+        this.clienteModificado.phone = parseInt(telefonoElemento.value);
+      }else{
+        this.clienteModificado.phone=this.cliente.phone;
+      }
+   
       
     });
 
@@ -118,35 +116,35 @@ constructor(
     const dniElemento = document.getElementById('dni') as HTMLInputElement;
     dniElemento.addEventListener('blur', () => {
 
-      // if(dniElemento.value!=''){
-      //   this.clienteModificado.dni = dniElemento.value;
-      // }else{
-      //   console.log('dni vacio '+ dniElemento.value);
-      // }
-      this.clienteModificado.dni = dniElemento.value;
+      if(dniElemento.value.length!=0){
+        this.clienteModificado.dni = dniElemento.value;
+      }else{
+        this.clienteModificado.dni = this.cliente.dni;
+      }
+      
       
     });
 
     const emailElemento = document.getElementById('email') as HTMLInputElement;
     emailElemento.addEventListener('blur', () => {
-      // if(emailElemento.value!=''){
-      //   this.clienteModificado.email=emailElemento.value;
-      // }else{
-      //   console.log('email vacio ' + emailElemento.value);
-      // }
-      this.clienteModificado.email=emailElemento.value;
+      if(emailElemento.value.length!=0){
+        this.clienteModificado.email=emailElemento.value;
+      }else{
+        this.clienteModificado.email=this.cliente.email;
+      }
+      
       
     });
 
     const lopdElemento = document.getElementById('lopd') as HTMLInputElement;
     lopdElemento.addEventListener('blur', () => {
-      // if(lopdElemento.value!=''){
-      //   this.clienteModificado.lopd=parseInt(lopdElemento.value);
-      // }else{
-      //   console.log('lopd vacio '+ lopdElemento.value);
-      // }
+      if(lopdElemento.value.length!=0){
+        this.clienteModificado.lopd=parseInt(lopdElemento.value);
+      }else{
+        this.clienteModificado.lopd=this.cliente.lopd;
+      }
     
-      this.clienteModificado.lopd=parseInt(lopdElemento.value);
+      
 
     });
       resolve();

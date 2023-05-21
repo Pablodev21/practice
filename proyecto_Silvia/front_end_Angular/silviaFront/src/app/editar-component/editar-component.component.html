@@ -30,31 +30,33 @@
         <h2 class="titulo" >Editar Paciente</h2>
         <div class="campo-editable">
           <label for="nombre">Nombre:  {{nombre}} </label>
-          <input type="text" id="nombre">
-    
+          <input type="text" id="nombre" [value]=nombre>
         </div>
         <div class="campo-editable">
           <label for="apellidos">Apellidos:  {{apellido}}</label>
-          <input type="text" id="apellidos">
+          <input type="text" id="apellidos"  [value]=apellido>
         </div>
         <div class="campo-editable">
           <label for="dni">Teléfono:  {{telefono}}</label>
-          <input type="text" id="telefono">
+          <input type="text" id="telefono" [value]=telefono>
         </div>
         <div class="campo-editable">
           <label for="dni">DNI:  {{dni}}</label>
-          <input type="text" id="dni">
+          <input type="text" id="dni" [value]=dni>
         </div>
         <div class="campo-editable">
           <label for="email">Email:  {{email}}</label>
-          <input type="text" id="email">
+          <input type="text" id="email" [value]=email>
         </div>
         <div class="campo-editable">
           <label for="lopd">LOPD:  {{lopd}}</label>
-          <input type="text" id="lopd">
+          <input type="text" id="lopd" [value]=lopd>
         </div>
-        <button (click)="modificarClient()" class="confirmarCambios">Confirmar</button>
-        <button (click)="eliminarCliente()" class="eliminarPaciente">Eliminar Paciente</button>
+        <div class="botones">
+          <button (click)="modificarClient()" class="confirmarCambios">Confirmar</button>
+          <button (click)="eliminarCliente()" class="eliminarPaciente">Eliminar Paciente</button>
+        </div>
+        
         
 
    
