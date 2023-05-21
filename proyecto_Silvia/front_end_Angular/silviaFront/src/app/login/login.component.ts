@@ -22,7 +22,8 @@ export class LoginComponent {
 
 
   constructor(
-    private router:Router,private http: HttpClient,
+    private router:Router,
+    private http: HttpClient,
     private Cache: ServicioCache
     
     ){}
@@ -36,7 +37,7 @@ export class LoginComponent {
      .subscribe(data=>{
        this.Cache.set('listaClientes',data);
      })
-     
+
     const nombreElemento = document.getElementById('nombre') as HTMLInputElement;
     nombreElemento.addEventListener('blur', () => {
     this.nombre=nombreElemento.value;

@@ -8,13 +8,13 @@
     </nav>
 
     <button class="filtros">Filtros</button>
+    <button (click)="recargarInfo()" class="recargar">Cargar Cambios</button>
     <div class="container-loader" *ngIf="carga">
         <div class="loader" >
             <img src="../../assets/media/wait.gif" alt="Cargando...">
           </div>
     </div>
     
-
     <div class="cuerpoPrincipal">
         
             <div class="lista-campos">

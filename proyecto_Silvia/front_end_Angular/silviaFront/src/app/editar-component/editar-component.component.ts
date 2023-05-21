@@ -64,18 +64,10 @@ constructor(
       .subscribe(data => {
       });
       window.confirm('CAMBIOS REALIZADOS CORRECTAMENTE');
-
     }else{
       window.alert('Cambios NO realizados');
-     
     }
-    
-    this.recargarListaClientes();
-    
-    setTimeout(() => {
-      this.ventana.close();
-      this.carga = false;
-    }, 2000);
+    this.ventana.close();
   }
 
 
@@ -173,12 +165,7 @@ constructor(
       window.alert('PACIENTE NO ELIMINADO');
     }
 
-    this.recargarListaClientes();
-    setTimeout(() => {
-      this.ventana.close();
-      this.carga = false;
-    }, 2000);
-   
+    this.ventana.close();
   }
 
 

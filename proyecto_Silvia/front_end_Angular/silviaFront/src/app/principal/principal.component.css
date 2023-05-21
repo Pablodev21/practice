@@ -195,3 +195,24 @@ body{
     background-color: transparent;
 }
 
+.recargar{
+    background-color: #99c7bd;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 3px solid grey;
+    width: 10em;
+    height: 5em;    
+    margin-right:2px ;
+}
+
+/* Para enlaces NO visitados */
+.recargar:link{
+    text-decoration: none;
+}
+
+.recargar:hover{
+    background-color: #84c6b5;
+}

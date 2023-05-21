@@ -7,6 +7,7 @@ import { Cliente } from '../objects/Cliente';
 import { endPoint } from '../Constants/endPoint';
 import { ServicioCache } from '../Cache/Servicio-Cache';
 import { EditarComponentComponent } from '../editar-component/editar-component.component';
+import { Router } from '@angular/router';
 
 
 
@@ -27,7 +28,9 @@ export class PrincipalComponent {
     private http: HttpClient,
     public dialog: MatDialog,
     private dataShare: DataShareService,
-    private Cache: ServicioCache
+    private Cache: ServicioCache,
+    private router:Router,
+
 
 
   ){}
@@ -120,6 +123,17 @@ export class PrincipalComponent {
       }
     }
 
+  }
+
+  recargarInfo(){
+    var resultado = window.confirm('¿Quieres recargar la información mostrada?');
+    if(resultado==true){
+      this.carga=true;
+      setTimeout(()=>{
+        this.router.navigate(['principal']);
+        this.carga = false;
+      },1000)
+    }
   }
 }
 
