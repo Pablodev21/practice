@@ -32,13 +32,26 @@ public class ClientServiceImp implements ClientService {
 
     @Override
     @Transactional(readOnly = true)
-    public Optional findByName(String client) throws ExceptionApp {
-        return Optional.empty();
+    public Optional<Client> findByName(String client) throws ExceptionApp {
+        return repository.findByNameIgnoreCase(client);
     }
 
     @Override
-    public Optional findById(int id) {
+    @Transactional(readOnly = true)
+    public Optional <Client> findById(int id) {
         return repository.findById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional <Client> findByDni(String dni) {
+        return repository.findByDni(dni);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional <Client> findByPhone(int phone) {
+        return repository.findByPhone(phone);
     }
 
     @Override

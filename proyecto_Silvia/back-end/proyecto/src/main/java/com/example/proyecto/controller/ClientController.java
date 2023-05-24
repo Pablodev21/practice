@@ -36,6 +36,58 @@ public class ClientController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get/byId/{id}")
+    public ResponseEntity<?> getClientById(@PathVariable int id){
+
+       Optional<Client> clientCheck = clientService.findById(id);
+
+        if(clientCheck.isPresent()){
+            return ResponseEntity.ok(clientCheck);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get/byName/{name}")
+    public ResponseEntity<?> getClientByName(@PathVariable String name) throws ExceptionApp {
+
+        Optional<Client> clientCheck = clientService.findByName(name);
+
+        if(clientCheck.isPresent()){
+            return ResponseEntity.ok(clientCheck);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get/byDni/{dni}")
+    public ResponseEntity<?> getClientByDni(@PathVariable String dni) throws ExceptionApp {
+
+        Optional<Client> clientCheck = clientService.findByDni(dni);
+
+        if(clientCheck.isPresent()){
+            return ResponseEntity.ok(clientCheck);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get/byPhone/{phone}")
+    public ResponseEntity<?> getClientByPhone(@PathVariable int phone) throws ExceptionApp {
+
+        Optional<Client> clientCheck = clientService.findByPhone(phone);
+
+        if(clientCheck.isPresent()){
+            return ResponseEntity.ok(clientCheck);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getClients")
     public ResponseEntity<?> getListClients(){
 

@@ -1,7 +1,6 @@
 package com.example.proyecto.service;
 
 import com.example.proyecto.exceptions.ExceptionApp;
-import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Consultation;
 import com.example.proyecto.repository.ConsultationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
