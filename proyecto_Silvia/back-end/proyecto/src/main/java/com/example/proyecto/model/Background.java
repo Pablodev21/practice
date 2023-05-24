@@ -50,7 +50,7 @@ public class Background {
 
     // Relación con clase cliente //
     @ManyToOne
-    @JoinColumn(name = "idCLient", insertable = false, updatable = false)
+    @JoinColumn(name = "idClient", insertable = false, updatable = false)
     @JsonBackReference
     private Client client;
 

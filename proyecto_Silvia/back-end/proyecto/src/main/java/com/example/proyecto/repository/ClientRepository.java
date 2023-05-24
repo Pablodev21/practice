@@ -21,4 +21,5 @@ public interface ClientRepository extends JpaRepository <Client,Integer>{
     @Query(value = "SELECT * FROM clients LIMIT 16", nativeQuery = true)
     List<Client> find16FirstClients();
 
+
 }

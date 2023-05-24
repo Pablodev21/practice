@@ -9,15 +9,7 @@ import lombok.*;
 @Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
-/*
-@Setter
-@Getter
-@ToString
 
-
-@Data
-@EqualsAndHashCode
-*/
 
 public class User {
 

@@ -51,12 +51,23 @@ constructor(
     this.email=this.cliente.email;
     this.lopd= this.cliente.lopd;
 
+    this.clienteModificado.id=this.cliente.id;
+    this.clienteModificado.name=this.cliente.name;
+    this.clienteModificado.lastName= this.cliente.lastName;
+    this.clienteModificado.phone=this.cliente.phone;
+    this.clienteModificado.dni=this.cliente.dni;
+    this.clienteModificado.email=this.cliente.email;
+    this.clienteModificado.lopd=this.cliente.lopd;
+
+
+
 
     this.recogerCampos();
   }
 
-  modificarClient(){
+  async modificarClient(){
 
+    await this.recogerCampos();
 
     var resultado = window.confirm('¿Estás seguro/a de realizar los cambios?')
     if(resultado==true){
@@ -71,36 +82,31 @@ constructor(
     this.ventana.close();
   }
 
-
-  recogerCampos(){
-    this.clienteModificado.id = this.cliente.id;
+  recogerCampos(): Promise<void> {
     return new Promise<void>((resolve) => {
-      
+
       const nombreElemento = document.getElementById('nombre') as HTMLInputElement;
-    nombreElemento.addEventListener('blur', () => {
+      this.clienteModificado.name=nombreElemento.value;
+    nombreElemento.addEventListener('change', () => {
       if(nombreElemento.value.length!=0){
         this.clienteModificado.name=nombreElemento.value;
       }else{
         this.clienteModificado.name=this.cliente.name;
       }  
-      console.log(this.clienteModificado.name);
-
-      
 
     });
 
     const apellidosElemento = document.getElementById('apellidos') as HTMLInputElement;
-    apellidosElemento.addEventListener('blur', () => {
+    apellidosElemento.addEventListener('change', () => {
       if(apellidosElemento.value.length!=0){
         this.clienteModificado.lastName=apellidosElemento.value;
       }else{
         this.clienteModificado.lastName=this.cliente.lastName;
       }  
-      console.log(this.clienteModificado.lastName);
       
     });
     const telefonoElemento = document.getElementById('telefono') as HTMLInputElement;
-    telefonoElemento.addEventListener('blur', () => {
+    telefonoElemento.addEventListener('change', () => {
 
       if(dniElemento.value.length!=0){
         this.clienteModificado.phone = parseInt(telefonoElemento.value);
@@ -114,7 +120,7 @@ constructor(
 
 
     const dniElemento = document.getElementById('dni') as HTMLInputElement;
-    dniElemento.addEventListener('blur', () => {
+    dniElemento.addEventListener('change', () => {
 
       if(dniElemento.value.length!=0){
         this.clienteModificado.dni = dniElemento.value;
@@ -126,7 +132,7 @@ constructor(
     });
 
     const emailElemento = document.getElementById('email') as HTMLInputElement;
-    emailElemento.addEventListener('blur', () => {
+    emailElemento.addEventListener('change', () => {
       if(emailElemento.value.length!=0){
         this.clienteModificado.email=emailElemento.value;
       }else{
@@ -137,19 +143,17 @@ constructor(
     });
 
     const lopdElemento = document.getElementById('lopd') as HTMLInputElement;
-    lopdElemento.addEventListener('blur', () => {
+    lopdElemento.addEventListener('change', () => {
       if(lopdElemento.value.length!=0){
         this.clienteModificado.lopd=parseInt(lopdElemento.value);
       }else{
         this.clienteModificado.lopd=this.cliente.lopd;
       }
-    
       
-
     });
       resolve();
-    });
-  }
+  });
+}
 
   eliminarCliente() {
     var eliminar = window.confirm('¿Estás seguro/a de eliminar este PACIENTE? EL CAMBIO NO ES REVERSIBLE');

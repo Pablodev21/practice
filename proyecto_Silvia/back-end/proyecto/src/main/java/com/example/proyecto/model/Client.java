@@ -80,7 +80,7 @@ public class Client {
     @JsonManagedReference
     private List<Evaluation> evaluations = new ArrayList<>();
 
-    // Evaluaciones //
+    // Consultas //
     @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Consultation> consultations = new ArrayList<>();
