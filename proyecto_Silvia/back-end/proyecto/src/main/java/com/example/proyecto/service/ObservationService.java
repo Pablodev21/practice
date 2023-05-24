@@ -1,7 +1,6 @@
 package com.example.proyecto.service;
 
 import com.example.proyecto.exceptions.ExceptionApp;
-import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Observation;
 
 import java.util.List;

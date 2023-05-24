@@ -2,7 +2,6 @@ package com.example.proyecto.service;
 
 import com.example.proyecto.exceptions.ExceptionApp;
 import com.example.proyecto.model.Allergie;
-import com.example.proyecto.model.Background;
 
 import java.util.List;
 import java.util.Optional;
