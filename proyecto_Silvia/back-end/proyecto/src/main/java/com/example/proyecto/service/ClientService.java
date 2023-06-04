@@ -11,13 +11,13 @@ public interface ClientService {
 
     Client saveClient(Client client)throws ExceptionApp;
 
-    Optional <Client> findByName(String client) throws ExceptionApp;
+    List <Client> findByName(String client) throws ExceptionApp;
 
     Optional <Client> findById (int id);
 
-    Optional <Client> findByDni (String dni);
+    List <Client> findByDni (String dni);
 
-    Optional <Client> findByPhone (int phone);
+    List <Client> findByPhone (int phone);
 
     List<Client> findAllClients();
 

@@ -216,3 +216,26 @@ body{
 .recargar:hover{
     background-color: #84c6b5;
 }
+
+.filaBotones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#cajaFiltro{
+    display: none;
+}
+
+#recargar{
+    display: none;
+}
+
+.filtro{
+    margin-left: 10px;
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+}
+

@@ -11,15 +11,7 @@ import lombok.*;
 @Table(name = "allergies")
 @NoArgsConstructor
 @AllArgsConstructor
-/*
-@Setter
-@Getter
-@ToString
 
-
-@Data
-@EqualsAndHashCode
-*/
 
 public class Allergie {
 

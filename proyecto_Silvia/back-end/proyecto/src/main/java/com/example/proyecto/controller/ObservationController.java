@@ -74,7 +74,7 @@ public class ObservationController {
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/delete/{id}")
 
-    public ResponseEntity<?> deleteObservationByIdClient(@PathVariable int id) {
+    public ResponseEntity<?> deleteObservation(@PathVariable int id) {
         Optional<Observation> observationChecked = observationService.findById(id);
         if (observationChecked.isPresent()) {
             observationService.deleteById(id);

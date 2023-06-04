@@ -75,7 +75,7 @@ public class SurgerieController {
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/delete/{id}")
 
-    public ResponseEntity<?> deleteSurgerieByIdClient(@PathVariable int id) {
+    public ResponseEntity<?> deleteSurgerie(@PathVariable int id) {
         Optional<Surgerie> surgerieChecked = surgerieService.findById(id);
         if (surgerieChecked.isPresent()) {
             surgerieService.deleteById(id);

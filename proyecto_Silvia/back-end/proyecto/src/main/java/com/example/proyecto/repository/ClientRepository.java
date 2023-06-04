@@ -9,13 +9,13 @@ import java.util.Optional;
 
 public interface ClientRepository extends JpaRepository <Client,Integer>{
 
-    Optional<Client> findByNameIgnoreCase(String name);
+    List<Client> findByNameIgnoreCase(String name);
 
     Optional<Client> findById(int id);
 
-    Optional<Client> findByDni(String dni);
+    List<Client> findByDni(String dni);
 
-    Optional<Client> findByPhone(int phone);
+    List<Client> findByPhone(int phone);
 
     List<Client> findAll();
 

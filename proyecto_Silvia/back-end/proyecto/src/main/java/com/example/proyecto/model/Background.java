@@ -7,22 +7,12 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 
-import java.sql.Timestamp;
-import java.util.Date;
 
 @Entity
 @Table(name = "backgrounds")
 @NoArgsConstructor
 @AllArgsConstructor
-/*
-@Setter
-@Getter
-@ToString
 
-
-@Data
-@EqualsAndHashCode
-*/
 
 public class Background {
 

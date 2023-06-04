@@ -21,18 +21,12 @@ public class ClientServiceImp implements ClientService {
     @Transactional
     public Client saveClient(Client client) throws ExceptionApp {
 
-        Optional<Client> clientFinded = repository.findByNameIgnoreCase(client.getName());
-        if(!clientFinded.isPresent()){
             return repository.save(client);
-
-        }else{
-            throw new ExceptionApp("Cant create the client");
-        }
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Client> findByName(String client) throws ExceptionApp {
+    public List<Client> findByName(String client) throws ExceptionApp {
         return repository.findByNameIgnoreCase(client);
     }
 
@@ -44,13 +38,13 @@ public class ClientServiceImp implements ClientService {
 
     @Override
     @Transactional(readOnly = true)
-    public Optional <Client> findByDni(String dni) {
+    public List <Client> findByDni(String dni) {
         return repository.findByDni(dni);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Optional <Client> findByPhone(int phone) {
+    public List <Client> findByPhone(int phone) {
         return repository.findByPhone(phone);
     }
 

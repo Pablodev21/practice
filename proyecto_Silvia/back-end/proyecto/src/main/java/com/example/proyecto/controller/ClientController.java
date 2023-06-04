@@ -3,7 +3,6 @@ package com.example.proyecto.controller;
 
 import com.example.proyecto.dto.ClientDTO;
 import com.example.proyecto.excepcions.ExceptionApp;
-import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Client;
 import com.example.proyecto.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,10 +51,10 @@ public class ClientController {
     @GetMapping("/get/byName/{name}")
     public ResponseEntity<?> getClientByName(@PathVariable String name) throws ExceptionApp {
 
-        Optional<Client> clientCheck = clientService.findByName(name);
+        List<Client> clientsCheck = clientService.findByName(name);
 
-        if(clientCheck.isPresent()){
-            return ResponseEntity.ok(clientCheck);
+        if(!clientsCheck.isEmpty()){
+            return ResponseEntity.ok(clientsCheck);
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
         }
@@ -65,10 +64,10 @@ public class ClientController {
     @GetMapping("/get/byDni/{dni}")
     public ResponseEntity<?> getClientByDni(@PathVariable String dni) throws ExceptionApp {
 
-        Optional<Client> clientCheck = clientService.findByDni(dni);
+        List<Client> clientsCheck = clientService.findByDni(dni);
 
-        if(clientCheck.isPresent()){
-            return ResponseEntity.ok(clientCheck);
+        if(!clientsCheck.isEmpty()){
+            return ResponseEntity.ok(clientsCheck);
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
         }
@@ -78,10 +77,10 @@ public class ClientController {
     @GetMapping("/get/byPhone/{phone}")
     public ResponseEntity<?> getClientByPhone(@PathVariable int phone) throws ExceptionApp {
 
-        Optional<Client> clientCheck = clientService.findByPhone(phone);
+        List<Client> clientsCheck = clientService.findByPhone(phone);
 
-        if(clientCheck.isPresent()){
-            return ResponseEntity.ok(clientCheck);
+        if(!clientsCheck.isEmpty()){
+            return ResponseEntity.ok(clientsCheck);
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Client found");
         }

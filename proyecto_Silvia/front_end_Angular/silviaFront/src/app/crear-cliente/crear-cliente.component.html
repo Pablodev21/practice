@@ -1,0 +1,45 @@
+<div class="container-loader" *ngIf="carga">
+    <div class="loader" >
+        <img src="../../assets/media/wait.gif" alt="Cargando...">
+      </div>
+  </div>
+  
+  <div class="contenedor">
+  
+          <button (click)="cerrarVentana()" class="cerrar">Cerrar</button>
+          <h2 class="titulo" >Crear Paciente</h2>
+          <div class="campo-editable">
+            <label for="nombre">Nombre:  </label>
+            <input type="text" id="nombre" >
+          </div>
+          <div class="campo-editable">
+            <label for="apellidos">Apellidos:  </label>
+            <input type="text" id="apellidos" >
+          </div>
+          <div class="campo-editable">
+            <label for="dni">Teléfono: </label>
+            <input type="text" id="telefono" >
+          </div>
+          <div class="campo-editable">
+            <label for="dni">DNI:  </label>
+            <input type="text" id="dni">
+          </div>
+          <div class="campo-editable">
+            <label for="email">Email: </label>
+            <input type="text" id="email">
+          </div>
+          <div class="campo-editable">
+            <label for="lopd">LOPD:  </label>
+            <input type="text" id="lopd" >
+          </div>
+          <div class="botones">
+            <button (click)="crearNuevoPaciente()" class="confirmarCambios">Confirmar</button>
+            
+          </div>
+          
+     
+  </div>
+    
+  
+  
+  

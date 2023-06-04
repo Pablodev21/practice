@@ -1,14 +1,24 @@
 
     <nav>
         <div class="menu">
-            <button class="menuInicio" href="../login/login.component.html" target="_blank" > INICIO </button>
             <button class="menuConsulta" href="" target="_blank" >CONSULTAS</button>
             <button class="menuCalendario" href="" target="_blank" >CALENDARIO</button>
         </div>
     </nav>
 
-    <button class="filtros">Filtros</button>
-    <button (click)="recargarInfo()" class="recargar">Cargar Cambios</button>
+    
+    <div class="filaBotones">
+        <button (click)="recargarInfo()" class="recargar">Cargar Cambios</button>
+        <button (click)="poopenPopupCrear()" class="recargar">Crear Nuevo Paciente</button>
+        <button (click)="abrirFiltros()"  class="filtros">Filtros</button>
+        <div id ="cajaFiltro" class="filaBotones camposFiltros"  style="display: none;" >
+            <input id="filtroNombre" class="filtro" placeholder="Nombre"  type="text">
+            <input id="filtroTelefono" class="filtro" placeholder="Número de teléfono"  type="text">
+            <input id="filtroDni" class="filtro" placeholder="DNI"  type="text">
+         </div>
+         <button id="aplicarFiltros" (click)="aplicarFiltros()" class="recargar" style="display: none;"  >Aplicar Filtros</button>
+    </div>
+   
     <div class="container-loader" *ngIf="carga">
         <div class="loader" >
             <img src="../../assets/media/wait.gif" alt="Cargando...">

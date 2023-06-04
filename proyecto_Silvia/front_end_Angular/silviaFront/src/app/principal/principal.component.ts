@@ -8,6 +8,7 @@ import { endPoint } from '../Constants/endPoint';
 import { ServicioCache } from '../Cache/Servicio-Cache';
 import { EditarComponentComponent } from '../editar-component/editar-component.component';
 import { Router } from '@angular/router';
+import { CrearClienteComponent } from '../crear-cliente/crear-cliente.component';
 
 
 
@@ -23,6 +24,13 @@ export class PrincipalComponent {
   public parametro:number =0;
   public carga: boolean=false;
   public client!: Cliente;
+  public clienteNuevo!:Cliente;
+  public filtroNombre:string="";
+  public filtroDNI:string="";
+  public filtroTelefono:number=0;
+  public filtroRealizado:string="";
+  public contador:number=0;
+  
 
   constructor(
     private http: HttpClient,
@@ -44,7 +52,12 @@ export class PrincipalComponent {
       this.listaClientes = data;
     })
 
-    this.listaClientes = this.Cache.get('listaClientes');
+    // this.listaClientes = this.Cache.get('listaClientes');
+
+    var nombreInput = document.getElementById('myInput') as HTMLElement;
+
+    this.recogerCampos();
+    
   }
 
   // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
@@ -80,6 +93,17 @@ export class PrincipalComponent {
     }, 1000);
    
   }
+  
+  // Método que espera a la recuperacion de datos //
+   poopenPopupCrear(): void {
+      this.carga = true;
+
+      setTimeout(() => {
+        this.abrirPopUpCrear();
+        this.carga = false;
+      }, 1000);
+    
+   }
 
   poopenPopupWait2(): void {
     this.carga = true;
@@ -87,7 +111,7 @@ export class PrincipalComponent {
     setTimeout(() => {
       this.poopenPopup();
       this.carga = false;
-    }, 2000);
+    }, 1000);
    
   }
   
@@ -113,6 +137,13 @@ export class PrincipalComponent {
    
   }
 
+  abrirPopUpCrear(){
+    // Tengo que mandar una info u otra en funcion a que estoy abriendo //
+    var dialogRef = this.dialog.open(CrearClienteComponent, {
+      width: '50%', height:'70%'
+    });
+  }
+
   async escogerCliente(){
     await this.selectedIndex(Cliente.id);
 
@@ -131,5 +162,89 @@ export class PrincipalComponent {
       this.ngOnInit();
     }
   }
-}
 
+  abrirFiltros(){
+    const campos = document.getElementById('cajaFiltro');
+    const confirmarFiltros = document.getElementById('aplicarFiltros');
+
+    if(campos !=null){
+      if (campos.style.display === 'none') {
+        campos.style.display = 'block';
+      } else {
+        campos.style.display = 'none';}
+      }
+    if(confirmarFiltros !=null){
+      if (confirmarFiltros.style.display === 'none') {
+        confirmarFiltros.style.display = 'block';
+      } else {
+        confirmarFiltros.style.display = 'none';}
+      }
+
+
+    }
+
+
+    recogerCampos(): Promise<void> {
+      return new Promise<void>((resolve) => {
+        this.contador=0;
+      const nombreElemento = document.getElementById('filtroNombre') as HTMLInputElement;
+      nombreElemento.addEventListener('blur', () => {
+        if(nombreElemento.value.length!=0){
+          this.contador=1;
+          this.filtroRealizado=endPoint.GET_CLIENTS_BY_NOMBRE+'/'+nombreElemento.value.toString();
+          console.log(this.filtroRealizado);
+        }else{
+         
+        }  
+  
+      });
+  
+      const telefonoElemento = document.getElementById('filtroTelefono') as HTMLInputElement;
+      telefonoElemento.addEventListener('blur', () => {
+        if(telefonoElemento.value.length!=0){
+          this.contador=1;
+          this.filtroRealizado=endPoint.GET_CLIENTS_BY_PHONE+'/'+telefonoElemento.value.toString();
+          console.log(this.filtroRealizado);
+        }else{
+        
+        }  
+        
+      });
+      const dniElemento = document.getElementById('filtroDni') as HTMLInputElement;
+      dniElemento.addEventListener('blur', () => {
+  
+        if(dniElemento.value.length!=0){
+          this.contador=1;
+          this.filtroRealizado=endPoint.GET_CLIENTS_BY_DNI+'/'+dniElemento.value.toString();
+          console.log(this.filtroRealizado);
+        }else{
+   
+        }
+     
+        
+      });
+  
+        resolve();
+    });
+  }
+
+    aplicarFiltros(){
+      if(this.contador==1){
+        this.contador=0;
+        window.confirm('Selecciona un único filtro');
+      }
+        var confirmarFiltrado = window.confirm('¿Quieres aplicar el filtro seleccionado?');
+        this.http.get<Cliente[]>(this.filtroRealizado)
+      .subscribe(data=>{
+        this.listaClientes.splice(0, this.listaClientes.length);
+         this.listaClientes = data;
+        
+      })
+      
+      
+
+
+      // this.recargarInfo();
+    }
+ 
+} 

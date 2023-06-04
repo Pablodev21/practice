@@ -1,10 +1,8 @@
 package com.example.proyecto.controller;
 
 
-import com.example.proyecto.dto.BackgroundDTO;
 import com.example.proyecto.dto.EvaluationDTO;
 import com.example.proyecto.exceptions.ExceptionApp;
-import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Evaluation;
 import com.example.proyecto.service.EvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,7 +73,7 @@ public class EvaluationController {
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/delete/{id}")
 
-    public ResponseEntity<?> deleteEvaluationByIdClient(@PathVariable int id) {
+    public ResponseEntity<?> deleteEvaluation (@PathVariable int id) {
         Optional<Evaluation> evaluationChecked = evaluationService.findById(id);
         if (evaluationChecked.isPresent()) {
             evaluationService.deleteById(id);

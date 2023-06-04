@@ -73,7 +73,7 @@ public class TreatmentController {
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping ("/delete/{id}")
 
-    public ResponseEntity<?> deleteTreatmentByIdClient(@PathVariable int id) {
+    public ResponseEntity<?> deleteTreatment(@PathVariable int id) {
         Optional<Treatment> treatmentChecked = treatmentService.findById(id);
         if (treatmentChecked.isPresent()) {
             treatmentService.deleteById(id);
