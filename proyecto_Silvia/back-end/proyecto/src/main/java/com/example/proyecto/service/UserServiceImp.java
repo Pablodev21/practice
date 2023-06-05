@@ -45,8 +45,16 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public User modifyUser(User user) {
-        return repository.save(user);
+    public User modifyUser(User user, int id) {
+        Optional<User> userChecked = this.repository.findById(id);
+
+        User userModify= userChecked.get();
+        userModify.setId(user.getId());
+        userModify.setLogin(user.getLogin());
+        userModify.setPassword(user.getPassword());
+        userModify.setRol(user.getRol());
+
+       return this.repository.save(userModify);
     }
 
     @Override
@@ -76,5 +84,10 @@ public class UserServiceImp implements UserService{
     @Override
     public User getUser() {
         return null;
+    }
+
+    @Override
+    public List<User> get8Users() {
+        return repository.getListaUsuario();
     }
 }

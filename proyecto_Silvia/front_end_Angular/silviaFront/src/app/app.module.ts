@@ -20,12 +20,15 @@ import { EditarComponentComponent } from './editar-component/editar-component.co
 import { VerificarComponent } from './verificar/verificar.component';
 import { CrearClienteComponent } from './crear-cliente/crear-cliente.component';
 import { GestionUsuarioComponent } from './gestion-usuario/gestion-usuario.component';
+import { CreacionUsuarioComponent } from './creacion-usuario/creacion-usuario.component';
 
 
 const appRoutes:Routes=[
 
   {path:'',component:LoginComponent},
-  {path:'principal', component:PrincipalComponent},  
+  {path:'principal', component:PrincipalComponent},
+  {path:'usuarios', component:GestionUsuarioComponent},
+
 ]
 
 @NgModule({
@@ -44,6 +47,7 @@ const appRoutes:Routes=[
     VerificarComponent,
     CrearClienteComponent,
     GestionUsuarioComponent,
+    CreacionUsuarioComponent,
 
   ],
   imports: [
@@ -53,7 +57,7 @@ const appRoutes:Routes=[
     BrowserAnimationsModule,
     MatDialogModule,
     RouterModule.forRoot(appRoutes)
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

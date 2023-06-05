@@ -30,15 +30,12 @@ export class GestionUsuarioComponent {
     private Cache: ServicioCache,
     private router:Router,
 
-
-
   ){}
 
   ngOnInit(){
 
     // Llamada a los 8 primeros clientes default //
-
-    this.http.get<Usuario[]>(endPoint.GET_8_CLIENTS)
+    this.http.get<Usuario[]>(endPoint.GET_Usuarios)
     .subscribe(data=>{
       this.listaUsuarios = data;
     })
@@ -129,5 +126,11 @@ export class GestionUsuarioComponent {
     var dialogRef = this.dialog.open(CrearClienteComponent, {
       width: '50%', height:'70%'
     });
+  }
+
+
+  volverInicio(){
+
+    this.router.navigate(['principal']);
   }
 }

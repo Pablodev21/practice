@@ -1,22 +1,4 @@
-<!-- <h1>titulo</h1>
-<span>Campo con el texto a editar</span>
-<input class="campoTexto" type="text">
-<button>Confirmar Cambios</button> -->
 
-<!-- 
-<div>
-    <button class="cerrar"></button>
-    <button class="borrarPaciente"></button>
-</div>
-
-<div class="filaInfo">
-    <div class="titulo">Nombre</div>
-    <div class="titulo">Apellidos</div>
-    <div class="titulo">Teléfono</div>
-    <div class="titulo">DNI</div>
-    <div class="titulo">Email</div>
-    <div class="titulo">LOPD</div>
-</div> -->
 <div class="container-loader" *ngIf="carga">
   <div class="loader" >
       <img src="../../assets/media/wait.gif" alt="Cargando...">
@@ -25,7 +7,6 @@
 
 <div class="contenedor">
 
-    
         <button (click)="cerrarVentana()" class="cerrar">Cerrar</button>
         <h2 class="titulo" >Editar Paciente</h2>
         <div class="campo-editable">
@@ -56,11 +37,5 @@
           <button (click)="modificarClient()" class="confirmarCambios">Confirmar</button>
           <button (click)="eliminarCliente()" class="eliminarPaciente">Eliminar Paciente</button>
         </div>
-        
-        
 
-   
 </div>
-  
-
-

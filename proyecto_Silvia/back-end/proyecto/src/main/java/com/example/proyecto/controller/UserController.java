@@ -52,7 +52,29 @@ public class UserController {
 
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping ("/getUsers")
+    public ResponseEntity<?> getUsers() throws ExceptionApp {
 
+        List <User>listUsers = userService.get8Users();
+        if (!listUsers.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(listUsers);
+        }else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("There are no users");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping ("/modUser/{id}")
+    public ResponseEntity<?> modifyUser(@RequestBody User user, @PathVariable int id ) throws ExceptionApp {
+
+        List <User>listUsers = userService.get8Users();
+        if (!listUsers.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(listUsers);
+        }else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("There are no users");
+        }
+    }
 
 
     // Función para gestionar el tamaño de los campos introducidos

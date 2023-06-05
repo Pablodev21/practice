@@ -1,0 +1,24 @@
+
+<div class="container-loader" *ngIf="carga">
+  <div class="loader" >
+      <img src="../../assets/media/wait.gif" alt="Cargando...">
+    </div>
+</div>
+
+<div class="contenedor">
+
+        <button (click)="cerrarVentana()" class="cerrar">Cerrar</button>
+        <h2 class="titulo" >Editar Usuario</h2>
+        <div class="campo-editable">
+          <label for="login">Login:  {{login}} </label>
+          <input type="text" id="login" [value]=login>
+        </div>
+        <div class="campo-editable">
+          <label for="rol">Rol:  {{rol}}</label>
+          <input type="text" id="rol"  [value]=rol>
+        </div>
+        <div class="botones">
+          <button (click)="modificarUsuario()" class="confirmarCambios">Confirmar</button>
+          <button (click)="eliminarUsuario()" class="eliminarPaciente">Eliminar Usuario</button>
+        </div>
+</div>

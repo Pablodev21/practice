@@ -16,7 +16,7 @@ export class LoginComponent {
 
   confirmado: boolean = false;
   public carga: boolean = false;
-  nombre:string=''; 
+  nombre:string='';
   contrasena:string='';
 
 
@@ -25,7 +25,7 @@ export class LoginComponent {
     private router:Router,
     private http: HttpClient,
     private Cache: ServicioCache
-    
+
     ){}
 
 
@@ -38,16 +38,18 @@ export class LoginComponent {
        this.Cache.set('listaClientes',data);
      })
 
+
+
     const nombreElemento = document.getElementById('nombre') as HTMLInputElement;
     nombreElemento.addEventListener('blur', () => {
     this.nombre=nombreElemento.value;
     setTimeout(() => {
-    
+
       this.carga = false;
-      
+
     }, 500);
     });
-  
+
 
     const contrasenaElemento = document.getElementById('contrasena') as HTMLInputElement;
     contrasenaElemento.addEventListener('blur', () => {
@@ -56,7 +58,7 @@ export class LoginComponent {
       setTimeout(() => {
         this.consultaLogin();
         this.carga = false;
-        
+
       }, 2000);
     });
   }
@@ -74,7 +76,7 @@ export class LoginComponent {
   consultaLogin(){
 
     this.http.get<boolean>(endPoint.GET_LOGIN+'/'+this.nombre+'/'+this.contrasena)
-    .subscribe(data=>{  
+    .subscribe(data=>{
       if(data){
         this.confirmado=true;
       }

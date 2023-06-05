@@ -243,7 +243,7 @@ export class PrincipalComponent {
     }
 
     abrirGestionUsuario(){
-
+      this.router.navigate(['usuarios']);
     }
 
 }

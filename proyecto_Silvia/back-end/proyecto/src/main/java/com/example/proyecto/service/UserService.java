@@ -14,13 +14,15 @@ public interface UserService {
 
     List<User> findAllUsers();
 
-    User modifyUser(User user);
+    User modifyUser(User user, int id);
 
     User deleteUser(User user);
 
     Boolean getConfirmLogin(String login,String password);
 
     User getUser();
+
+    List<User> get8Users();
 
 
 }
