@@ -12,11 +12,14 @@ public interface UserService {
 
     Optional findByLogin(String login) throws ExceptionApp;
 
+    Optional findById(int id);
     List<User> findAllUsers();
 
     User modifyUser(User user, int id);
 
     User deleteUser(User user);
+
+    void delete(int id);
 
     Boolean getConfirmLogin(String login,String password);
 

@@ -37,6 +37,11 @@ public class UserServiceImp implements UserService{
         return repository.findByLoginIgnoreCase(login);
     }
 
+    @Override
+    public Optional findById(int id) {
+        return repository.findById(id);
+    }
+
 
     @Override
     @Transactional(readOnly = true)
@@ -60,6 +65,11 @@ public class UserServiceImp implements UserService{
     @Override
     public User deleteUser(User user) {
         return repository.deleteByLogin(user.getLogin());
+    }
+
+    @Override
+    public void delete(int id) {
+        repository.deleteById(id);
     }
 
 

@@ -92,7 +92,7 @@ constructor(
         this.clienteModificado.name=nombreElemento.value;
       }else{
         this.clienteModificado.name=this.cliente.name;
-      }  
+      }
 
     });
 
@@ -102,8 +102,8 @@ constructor(
         this.clienteModificado.lastName=apellidosElemento.value;
       }else{
         this.clienteModificado.lastName=this.cliente.lastName;
-      }  
-      
+      }
+
     });
     const telefonoElemento = document.getElementById('telefono') as HTMLInputElement;
     telefonoElemento.addEventListener('change', () => {
@@ -113,8 +113,8 @@ constructor(
       }else{
         this.clienteModificado.phone=this.cliente.phone;
       }
-   
-      
+
+
     });
 
 
@@ -127,8 +127,8 @@ constructor(
       }else{
         this.clienteModificado.dni = this.cliente.dni;
       }
-      
-      
+
+
     });
 
     const emailElemento = document.getElementById('email') as HTMLInputElement;
@@ -138,8 +138,8 @@ constructor(
       }else{
         this.clienteModificado.email=this.cliente.email;
       }
-      
-      
+
+
     });
 
     const lopdElemento = document.getElementById('lopd') as HTMLInputElement;
@@ -149,7 +149,7 @@ constructor(
       }else{
         this.clienteModificado.lopd=this.cliente.lopd;
       }
-      
+
     });
       resolve();
   });
@@ -162,7 +162,7 @@ constructor(
       .subscribe(data => {
         window.confirm('PACIENTE ELIMINADO')
       });
-      
+
     }else{
       window.alert('PACIENTE NO ELIMINADO');
     }

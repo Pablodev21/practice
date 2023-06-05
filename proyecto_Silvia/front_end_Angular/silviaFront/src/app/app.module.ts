@@ -21,6 +21,7 @@ import { VerificarComponent } from './verificar/verificar.component';
 import { CrearClienteComponent } from './crear-cliente/crear-cliente.component';
 import { GestionUsuarioComponent } from './gestion-usuario/gestion-usuario.component';
 import { CreacionUsuarioComponent } from './creacion-usuario/creacion-usuario.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 
 
 const appRoutes:Routes=[
@@ -48,6 +49,7 @@ const appRoutes:Routes=[
     CrearClienteComponent,
     GestionUsuarioComponent,
     CreacionUsuarioComponent,
+    EditarUsuarioComponent,
 
   ],
   imports: [

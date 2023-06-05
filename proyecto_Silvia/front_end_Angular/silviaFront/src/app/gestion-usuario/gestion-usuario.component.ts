@@ -6,10 +6,10 @@ import { ServicioCache } from '../Cache/Servicio-Cache';
 import { Router } from '@angular/router';
 import { Usuario } from '../objects/Usuario';
 import { endPoint } from '../Constants/endPoint';
-import { PopUpComponent } from '../pop-up/pop-up.component';
 import { EditarComponentComponent } from '../editar-component/editar-component.component';
 import { CrearClienteComponent } from '../crear-cliente/crear-cliente.component';
 import { CreacionUsuarioComponent } from '../creacion-usuario/creacion-usuario.component';
+import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
 
 @Component({
   selector: 'app-gestion-usuario',
@@ -22,7 +22,8 @@ export class GestionUsuarioComponent {
   public listaUsuarios: Usuario[] = [];
   public carga:boolean=false;
   public parametro: number =0;
-  public paramget:string="";
+  public paramget:number=0;
+  public usuario!: Usuario;
 
   constructor(
     private http: HttpClient,
@@ -50,12 +51,23 @@ export class GestionUsuarioComponent {
     }
   }
 
-// Funcion que se activa desde el boton del popUp que guarda el login del Usuario que ocupa esa posicion //
-  selectedIndex(login: any): Promise<void> {
+  selectedIndex(id: any): Promise<void> {
     return new Promise<void>((resolve) => {
-      this.paramget = login;
+      this.paramget = id;
       resolve();
     });
+  }
+
+  async escogerUsuario(){
+    await this.selectedIndex(Usuario.id);
+
+    for(let i =0;i< this.listaUsuarios.length;i++){
+      if(this.paramget==this.listaUsuarios[i].id){
+        this.Cache.set('usuario',this.listaUsuarios[i]);
+
+      }
+    }
+
   }
 
 
@@ -96,7 +108,7 @@ export class GestionUsuarioComponent {
   poopenPopup(): void {
 
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
-    var dialogRef = this.dialog.open(CreacionUsuarioComponent, {
+    var dialogRef = this.dialog.open(EditarUsuarioComponent, {
       width: '50%', height:'70%'
     });
     this.dataShare.setData(this.parametro);
@@ -106,7 +118,7 @@ export class GestionUsuarioComponent {
   abrirPopUpEditar(): void {
 
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
-    var dialogRef = this.dialog.open(EditarComponentComponent, {
+    var dialogRef = this.dialog.open(EditarUsuarioComponent, {
       width: '50%', height:'70%'
     });
     this.dataShare.setData(this.parametro);
@@ -115,11 +127,21 @@ export class GestionUsuarioComponent {
 
   abrirPopUpCrear(){
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
-    var dialogRef = this.dialog.open(CrearClienteComponent, {
+    var dialogRef = this.dialog.open(CreacionUsuarioComponent, {
       width: '50%', height:'70%'
     });
   }
 
+  // Método que espera a la recuperacion de datos //
+  poopenPopupEditar(): void {
+    this.carga = true;
+
+    setTimeout(() => {
+      this.abrirPopUpEditar();
+      this.carga = false;
+    }, 1000);
+
+  }
 
   volverInicio(){
 

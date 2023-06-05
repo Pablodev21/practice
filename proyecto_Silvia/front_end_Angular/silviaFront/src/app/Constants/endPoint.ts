@@ -7,6 +7,10 @@ export class endPoint{
     // Usuarios //
     static GET_Usuarios:string='http://localhost:8080/fisioSilvia/user/getUsers';
     static MOD_Usuario:string='http://localhost:8080/fisioSilvia/user/modUser';
+    static DEL_Usuario:string='http://localhost:8080/fisioSilvia/user/deleteUser';
+    static SAVE_Usuario:string='http://localhost:8080/fisioSilvia/user/createUser'
+
+
 
     // Clientes //
     static GET_8_CLIENTS: string = 'http://localhost:8080/fisioSilvia/client/get8Clients';

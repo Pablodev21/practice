@@ -17,4 +17,5 @@ public interface UserRepository extends JpaRepository <User,Integer> {
     @Query(value="SELECT * FROM users LIMIT 8 ", nativeQuery = true)
     List<User> getListaUsuario();
 
+    void deleteById(int id);
 }
