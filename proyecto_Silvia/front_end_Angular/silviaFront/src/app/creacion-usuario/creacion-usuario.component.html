@@ -8,10 +8,14 @@
 <div class="contenedor">
 
         <button (click)="cerrarVentana()" class="cerrar">Cerrar</button>
-        <h2 class="titulo" >Editar Usuario</h2>
+        <h2 class="titulo" >Crear Usuario</h2>
         <div class="campo-editable">
           <label for="login">Login:  {{login}} </label>
           <input type="text" id="login" [value]=login>
+        </div>
+        <div class="campo-editable">
+          <label for="login">Contraseña:  {{contrasena}} </label>
+          <input type="text" id="contrasena" [value]=contrasena>
         </div>
         <div class="campo-editable">
           <label for="rol">Rol:  {{rol}}</label>

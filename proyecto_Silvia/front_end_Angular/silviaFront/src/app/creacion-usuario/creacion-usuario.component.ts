@@ -20,6 +20,7 @@ export class CreacionUsuarioComponent {
     ){}
   id!:number;
   login!:string;
+  contrasena!:string;
   rol!: string;
 
   public carga: boolean=false;
@@ -28,7 +29,7 @@ export class CreacionUsuarioComponent {
   usuarioModificado: Usuario = {
     id: 0,
     login: "",
-    contrasena: '',
+    password: '',
     rol: '',
   };
 
@@ -70,7 +71,16 @@ export class CreacionUsuarioComponent {
       }
 
     });
+    const contrasenaElemento = document.getElementById('contrasena') as HTMLInputElement;
+    this.usuarioModificado.login = nombreElemento.value;
+    contrasenaElemento.addEventListener('change', () => {
+    if(contrasenaElemento.value.length!=0){
+      this.usuarioModificado.password=contrasenaElemento.value;
+    }else{
+      this.usuarioModificado.password=this.usuario.password;
+    }
 
+  });
     const rolElemento = document.getElementById('rol') as HTMLInputElement;
     rolElemento.addEventListener('change', () => {
       if(rolElemento.value.length!=0){

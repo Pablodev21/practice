@@ -6,7 +6,7 @@
 </nav>
 <div class="filaBotones">
   <button (click)="recargarInfo()" class="recargar">Cargar Cambios</button>
-  <button (click)="poopenPopupCrear()" class="recargar">Crear Nuevo Usuario</button>
+  <button (click)=" poopenPopup()" class="recargar">Crear Nuevo Usuario</button>
 </div>
 
 <div class="container-loader" *ngIf="carga">
@@ -20,15 +20,16 @@
       <div class="lista-campos">
           <div class="check"></div>
           <div class="campo">Nombre</div>
+          <div class="campo">Contraseña</div>
           <div class="campo">Rol</div>
           <!-- <div class="campo">Editar</div> -->
 
 
       </div>
       <div class="lista-campos" *ngFor="let usuario of listaUsuarios; let i = index">
-          <a (click)="selectedIndex(usuario.login)" class="check"> <img class="infoIconEditar" src="../../assets/media/iconoEditar.png"></a>
+          <a (click)="selectedIndex(usuario.login);" class="check"> <img class="infoIconEditar" src="../../assets/media/iconoEditar.png"></a>
           <button class="campoButton-edit" >{{usuario.login}}</button>
+          <button class="campoButton-edit" >{{usuario.password}}</button>
           <button class="campoButton-edit" >{{usuario.rol}}</button>
-          <a class="campoButton">  <img class="infoIcon" src="../../assets/media/infoS.png" alt="Información"></a>
       </div>
   </div>

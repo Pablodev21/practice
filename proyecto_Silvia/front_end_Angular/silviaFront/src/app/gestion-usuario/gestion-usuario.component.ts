@@ -9,6 +9,7 @@ import { endPoint } from '../Constants/endPoint';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { EditarComponentComponent } from '../editar-component/editar-component.component';
 import { CrearClienteComponent } from '../crear-cliente/crear-cliente.component';
+import { CreacionUsuarioComponent } from '../creacion-usuario/creacion-usuario.component';
 
 @Component({
   selector: 'app-gestion-usuario',
@@ -33,12 +34,12 @@ export class GestionUsuarioComponent {
   ){}
 
   ngOnInit(){
-
-    // Llamada a los 8 primeros clientes default //
+    // Llamada a los 8 primeros usuarios default //
     this.http.get<Usuario[]>(endPoint.GET_Usuarios)
     .subscribe(data=>{
       this.listaUsuarios = data;
     })
+
   }
 
 // Recargar el componente y su información //
@@ -56,6 +57,8 @@ export class GestionUsuarioComponent {
       resolve();
     });
   }
+
+
   // Método que espera a la recuperacion de datos //
   poopenPopupWait(): void {
     this.carga = true;
@@ -67,16 +70,6 @@ export class GestionUsuarioComponent {
 
   }
 
-   // Método que espera a la recuperacion de datos //
-   poopenPopupEditar(): void {
-    this.carga = true;
-
-    setTimeout(() => {
-      this.abrirPopUpEditar();
-      this.carga = false;
-    }, 1000);
-
-  }
 
   // Método que espera a la recuperacion de datos //
    poopenPopupCrear(): void {
@@ -103,8 +96,7 @@ export class GestionUsuarioComponent {
   poopenPopup(): void {
 
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
-    // Para saber si tienes que editar el nombre, el dni, el numero... //
-    var dialogRef = this.dialog.open(PopUpComponent, {
+    var dialogRef = this.dialog.open(CreacionUsuarioComponent, {
       width: '50%', height:'70%'
     });
     this.dataShare.setData(this.parametro);
