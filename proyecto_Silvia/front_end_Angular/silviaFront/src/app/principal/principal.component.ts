@@ -30,7 +30,7 @@ export class PrincipalComponent {
   public filtroTelefono:number=0;
   public filtroRealizado:string="";
   public contador:number=0;
-
+  public rolAdmin:boolean=false;
 
   constructor(
     private http: HttpClient,
@@ -44,26 +44,18 @@ export class PrincipalComponent {
   ){}
 
   ngOnInit(){
-
+    // console.log(this.Cache.get('rol' + 'rol usuario'));
     // Llamada a los 8 primeros clientes default //
-
     this.http.get<Cliente[]>(endPoint.GET_8_CLIENTS)
     .subscribe(data=>{
       this.listaClientes = data;
     })
-
-    // this.listaClientes = this.Cache.get('listaClientes');
-
-    var nombreInput = document.getElementById('myInput') as HTMLElement;
+    // this.comprobarRol();
 
     this.recogerCampos();
 
   }
 
-  // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
-  // selectedIndex(id:number){
-  //     this.paramget= id;
-  // }
 
   selectedIndex(id: any): Promise<void> {
     return new Promise<void>((resolve) => {
@@ -244,6 +236,13 @@ export class PrincipalComponent {
 
     abrirGestionUsuario(){
       this.router.navigate(['usuarios']);
+    }
+
+    comprobarRol(){
+      const botonUsuarios = document.getElementById('botonUsuariosRol')  as HTMLInputElement;
+      if(this.Cache.get('rol')){
+        botonUsuarios.style.display = 'block';
+      }
     }
 
 }

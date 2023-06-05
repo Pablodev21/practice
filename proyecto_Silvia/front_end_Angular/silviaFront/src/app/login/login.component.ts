@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { endPoint } from '../Constants/endPoint';
 import { ServicioCache } from '../Cache/Servicio-Cache';
 import { Cliente } from '../objects/Cliente';
+import { Usuario } from '../objects/Usuario';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class LoginComponent {
 
 
   confirmado: boolean = false;
+  rolAdmin:boolean=false;
   public carga: boolean = false;
   nombre:string='';
   contrasena:string='';
@@ -56,6 +58,7 @@ export class LoginComponent {
     this.contrasena=contrasenaElemento.value;
       this.carga=true;
       setTimeout(() => {
+        // this.insertarRol();
         this.consultaLogin();
         this.carga = false;
 
@@ -74,7 +77,6 @@ export class LoginComponent {
   }
 
   consultaLogin(){
-
     this.http.get<boolean>(endPoint.GET_LOGIN+'/'+this.nombre+'/'+this.contrasena)
     .subscribe(data=>{
       if(data){
@@ -83,6 +85,15 @@ export class LoginComponent {
     })
   }
 
-
+  insertarRol(){
+    this.http.get<Usuario>(endPoint.CheckRol_Usuario + this.nombre)
+    .subscribe(data=>{
+      if(data.rol=='admin'){
+        this.rolAdmin=true;
+        this.Cache.set('rol',this.rolAdmin);
+        console.log(this.Cache.get('rol' + 'rol del usuario'));
+      }
+    })
+  }
 }
 

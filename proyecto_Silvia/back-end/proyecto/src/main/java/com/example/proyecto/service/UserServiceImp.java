@@ -2,6 +2,7 @@ package com.example.proyecto.service;
 
 
 import com.example.proyecto.excepcions.ExceptionApp;
+import com.example.proyecto.model.Background;
 import com.example.proyecto.model.User;
 import com.example.proyecto.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,4 +101,6 @@ public class UserServiceImp implements UserService{
     public List<User> get8Users() {
         return repository.getListaUsuario();
     }
+
+
 }

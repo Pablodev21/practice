@@ -118,7 +118,7 @@ export class EditarUsuarioComponent {
   eliminarUsuario() {
     var eliminar = window.confirm('¿Estás seguro/a de eliminar este USUARIO? EL CAMBIO NO ES REVERSIBLE');
     if(eliminar==true){
-      this.http.delete<Usuario>(endPoint.DEL_Usuario+'/'+this.id)
+      this.http.delete(endPoint.DEL_Usuario+'/'+this.id)
       .subscribe(data => {
         window.confirm('USUARIO ELIMINADO')
       });

@@ -2,6 +2,7 @@ package com.example.proyecto.controller;
 
 import com.example.proyecto.dto.UserDTO;
 import com.example.proyecto.excepcions.ExceptionApp;
+import com.example.proyecto.model.Background;
 import com.example.proyecto.model.Client;
 import com.example.proyecto.model.User;
 import com.example.proyecto.service.UserService;
@@ -80,6 +81,18 @@ public class UserController {
 
         this.userService.modifyUser(user,id);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(user);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping ("/findByLogin/{login}")
+    public ResponseEntity<?> getRolUser( @PathVariable String login) throws ExceptionApp {
+        Optional <User>userChecked = userService.findByLogin(login);
+        if (userChecked.isPresent()) {
+            return ResponseEntity.status(HttpStatus.CREATED).body(userChecked);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No");
+        }
+
     }
 
 }

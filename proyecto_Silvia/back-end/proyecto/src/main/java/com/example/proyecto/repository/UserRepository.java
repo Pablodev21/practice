@@ -18,4 +18,6 @@ public interface UserRepository extends JpaRepository <User,Integer> {
     List<User> getListaUsuario();
 
     void deleteById(int id);
+
+
 }
