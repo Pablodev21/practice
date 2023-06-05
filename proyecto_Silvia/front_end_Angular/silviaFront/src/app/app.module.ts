@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EditarComponentComponent } from './editar-component/editar-component.component';
 import { VerificarComponent } from './verificar/verificar.component';
 import { CrearClienteComponent } from './crear-cliente/crear-cliente.component';
+import { GestionUsuarioComponent } from './gestion-usuario/gestion-usuario.component';
 
 
 const appRoutes:Routes=[
@@ -42,6 +43,7 @@ const appRoutes:Routes=[
     EditarComponentComponent,
     VerificarComponent,
     CrearClienteComponent,
+    GestionUsuarioComponent,
 
   ],
   imports: [

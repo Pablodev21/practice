@@ -17,7 +17,7 @@ body{
 }
 
 /* Estilos para los enlaces del menú de navegación  */
-.menu button{  
+.menu button{
     background-color: #99c7bd;
     color: white;
     display: flex;
@@ -26,7 +26,7 @@ body{
     border-radius: 10px;
     border: 3px solid grey;
     width: 10em;
-    height: 5em;    
+    height: 5em;
     margin-right:2px ;
     font-weight: bold;
 }
@@ -87,27 +87,7 @@ body{
 
 }
 
-.filtros{
-    background-color: #99c7bd;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 3px solid grey;
-    width: 10em;
-    height: 5em;    
-    margin-right:2px ;
-}
 
-/* Para enlaces NO visitados */
-.filtros:link{
-    text-decoration: none;
-}
-
-.filtros:hover{
-    background-color: #84c6b5;
-}
 
 /* Cuerpo que contiene la caja que contiene la lista de información  */
 .cuerpoPrincipal{
@@ -132,7 +112,7 @@ body{
     width: 100%;
     height: 10%;
     align-items: center;
-    border: 2px solid grey ;   
+    border: 2px solid grey ;
 }
 
 .campo{
@@ -204,7 +184,7 @@ body{
     border-radius: 10px;
     border: 3px solid grey;
     width: 10em;
-    height: 5em;    
+    height: 5em;
     margin-right:2px ;
 }
 

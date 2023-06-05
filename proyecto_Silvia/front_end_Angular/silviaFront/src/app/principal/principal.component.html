@@ -1,12 +1,13 @@
 
     <nav>
         <div class="menu">
-            <button class="menuConsulta" href="" target="_blank" >CONSULTAS</button>
-            <button class="menuCalendario" href="" target="_blank" >CALENDARIO</button>
+            <button class="menuConsulta" >CONSULTAS</button>
+            <button class="menuCalendario" >CALENDARIO</button>
+            <button class="menuCalendario" (click)="abrirGestionUsuario()" >GESTIÓN USUARIOS</button>
         </div>
     </nav>
 
-    
+
     <div class="filaBotones">
         <button (click)="recargarInfo()" class="recargar">Cargar Cambios</button>
         <button (click)="poopenPopupCrear()" class="recargar">Crear Nuevo Paciente</button>
@@ -18,15 +19,15 @@
          </div>
          <button id="aplicarFiltros" (click)="aplicarFiltros()" class="recargar" style="display: none;"  >Aplicar Filtros</button>
     </div>
-   
+
     <div class="container-loader" *ngIf="carga">
         <div class="loader" >
             <img src="../../assets/media/wait.gif" alt="Cargando...">
           </div>
     </div>
-    
+
     <div class="cuerpoPrincipal">
-        
+
             <div class="lista-campos">
                 <div class="check"></div>
                 <div class="campo">Nombre</div>
@@ -50,6 +51,6 @@
             </div>
         </div>
 
-            
-            
-    
+
+
+

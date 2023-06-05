@@ -30,7 +30,7 @@ export class PrincipalComponent {
   public filtroTelefono:number=0;
   public filtroRealizado:string="";
   public contador:number=0;
-  
+
 
   constructor(
     private http: HttpClient,
@@ -42,7 +42,7 @@ export class PrincipalComponent {
 
 
   ){}
-  
+
   ngOnInit(){
 
     // Llamada a los 8 primeros clientes default //
@@ -57,7 +57,7 @@ export class PrincipalComponent {
     var nombreInput = document.getElementById('myInput') as HTMLElement;
 
     this.recogerCampos();
-    
+
   }
 
   // Funcion que se activa desde el boton del popUp que guarda el id del Cliente que ocupa esa posicion //
@@ -75,12 +75,12 @@ export class PrincipalComponent {
   // Método que espera a la recuperacion de datos //
   poopenPopupWait(): void {
     this.carga = true;
-    
+
     setTimeout(() => {
       this.poopenPopup();
       this.carga = false;
     }, 2000);
-   
+
   }
 
    // Método que espera a la recuperacion de datos //
@@ -91,9 +91,9 @@ export class PrincipalComponent {
       this.abrirPopUpEditar();
       this.carga = false;
     }, 1000);
-   
+
   }
-  
+
   // Método que espera a la recuperacion de datos //
    poopenPopupCrear(): void {
       this.carga = true;
@@ -102,39 +102,39 @@ export class PrincipalComponent {
         this.abrirPopUpCrear();
         this.carga = false;
       }, 1000);
-    
+
    }
 
   poopenPopupWait2(): void {
     this.carga = true;
-    
+
     setTimeout(() => {
       this.poopenPopup();
       this.carga = false;
     }, 1000);
-   
+
   }
-  
+
   // Funcion que abre el popUp en cada boton y le manda el id del cliente seleccionado al popUp //
   poopenPopup(): void {
-    
+
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
     // Para saber si tienes que editar el nombre, el dni, el numero... //
     var dialogRef = this.dialog.open(PopUpComponent, {
       width: '50%', height:'70%'
     });
     this.dataShare.setData(this.parametro);
-   
+
   }
 
   abrirPopUpEditar(): void {
-    
+
     // Tengo que mandar una info u otra en funcion a que estoy abriendo //
     var dialogRef = this.dialog.open(EditarComponentComponent, {
       width: '50%', height:'70%'
     });
     this.dataShare.setData(this.parametro);
-   
+
   }
 
   abrirPopUpCrear(){
@@ -150,7 +150,7 @@ export class PrincipalComponent {
     for(let i =0;i< this.listaClientes.length;i++){
       if(this.paramget==this.listaClientes[i].id){
         this.Cache.set('client',this.listaClientes[i]);
-        console.log(this.Cache.get('client'));
+
       }
     }
 
@@ -194,11 +194,11 @@ export class PrincipalComponent {
           this.filtroRealizado=endPoint.GET_CLIENTS_BY_NOMBRE+'/'+nombreElemento.value.toString();
           console.log(this.filtroRealizado);
         }else{
-         
-        }  
-  
+
+        }
+
       });
-  
+
       const telefonoElemento = document.getElementById('filtroTelefono') as HTMLInputElement;
       telefonoElemento.addEventListener('blur', () => {
         if(telefonoElemento.value.length!=0){
@@ -206,24 +206,24 @@ export class PrincipalComponent {
           this.filtroRealizado=endPoint.GET_CLIENTS_BY_PHONE+'/'+telefonoElemento.value.toString();
           console.log(this.filtroRealizado);
         }else{
-        
-        }  
-        
+
+        }
+
       });
       const dniElemento = document.getElementById('filtroDni') as HTMLInputElement;
       dniElemento.addEventListener('blur', () => {
-  
+
         if(dniElemento.value.length!=0){
           this.contador=1;
           this.filtroRealizado=endPoint.GET_CLIENTS_BY_DNI+'/'+dniElemento.value.toString();
           console.log(this.filtroRealizado);
         }else{
-   
+
         }
-     
-        
+
+
       });
-  
+
         resolve();
     });
   }
@@ -238,13 +238,12 @@ export class PrincipalComponent {
       .subscribe(data=>{
         this.listaClientes.splice(0, this.listaClientes.length);
          this.listaClientes = data;
-        
+
       })
-      
-      
-
-
-      // this.recargarInfo();
     }
- 
-} 
+
+    abrirGestionUsuario(){
+
+    }
+
+}

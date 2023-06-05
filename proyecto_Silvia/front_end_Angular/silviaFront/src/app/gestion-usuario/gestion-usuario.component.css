@@ -1,0 +1,241 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #a4acb4;
+  z-index: 1;
+}
+
+/* Estilos para el menú de navegacion */
+.menu{
+  margin-top: 2em;
+  display:flex;
+  justify-content: center;
+}
+
+/* Estilos para los enlaces del menú de navegación  */
+.menu button{
+  background-color: #99c7bd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid grey;
+  width: 10em;
+  height: 5em;
+  margin-right:2px ;
+  font-weight: bold;
+}
+
+/* Para enlaces ya visitados  */
+.menu button :visited{
+  text-decoration: none;
+}
+
+/* Para enlaces NO visitados */
+.menu button:link{
+  text-decoration: none;
+}
+
+.menu button:hover{
+  background-color: #84c6b5;
+
+}
+
+.campoButton{
+  width: 300px;
+  height: 100%;
+  border: #a4acb4 solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #99c7bd;
+  font-weight: bold;
+}
+
+.campoButton :visited{
+  text-decoration: none;
+}
+
+.campoButton:hover{
+  background-color: #5AB1AD;
+}
+
+.campoButton-edit{
+  width: 300px;
+  height: 100%;
+  border: #a4acb4 solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #B8B8B8;
+  font-weight: bold;
+}
+
+.campoButton-edit:visited{
+  text-decoration: none;
+}
+
+.campoButton-edit:hover{
+  background-color: #84c6b5;
+
+}
+
+.filtros{
+  background-color: #99c7bd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid grey;
+  width: 10em;
+  height: 5em;
+  margin-right:2px ;
+}
+
+/* Para enlaces NO visitados */
+.filtros:link{
+  text-decoration: none;
+}
+
+.filtros:hover{
+  background-color: #84c6b5;
+}
+
+/* Cuerpo que contiene la caja que contiene la lista de información  */
+.cuerpoPrincipal{
+  background-color: grey;
+  width: 98vw;
+  height: 70vh;
+  margin: auto;
+  margin-top: 1em;
+  border-radius: 5px;
+  border: 5px solid #99c7bd;
+}
+
+/* Caja que tiene la cabecera de información */
+.cabecera-Datos{
+  width: 100%;
+  height: 100%;
+}
+
+.lista-campos{
+  background-color: #84c6b5;
+  display: flex;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  border: 2px solid grey ;
+}
+
+.campo{
+  width: 300px;
+  height: 100%;
+  border: #a4acb4 solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-loader{
+  position: fixed;
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+
+.infoIcon{
+  width: 50px;
+}
+
+.infoIconEditar{
+  width: 40px;
+}
+
+
+.check{
+
+  width: 50px;
+}
+
+.check:visited{
+  text-decoration: none;
+}
+
+.check:hover{
+  background-color: #84c6b5;
+
+}
+
+.iconoEditar{
+  width:30px ;
+  height: 20px;
+  background-color: transparent;
+}
+
+.recargar{
+  background-color: #99c7bd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid grey;
+  width: 10em;
+  height: 5em;
+  margin-right:2px ;
+}
+
+/* Para enlaces NO visitados */
+.recargar:link{
+  text-decoration: none;
+}
+
+.recargar:hover{
+  background-color: #84c6b5;
+}
+
+.filaBotones{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#cajaFiltro{
+  display: none;
+}
+
+#recargar{
+  display: none;
+}
+
+.filtro{
+  margin-left: 10px;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+}
+

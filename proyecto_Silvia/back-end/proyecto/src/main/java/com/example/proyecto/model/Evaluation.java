@@ -7,7 +7,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 
-
 @Entity
 @Table(name = "evaluations")
 @NoArgsConstructor
@@ -36,7 +35,6 @@ public class Evaluation {
     @NotNull
     @Column(name = "date")
     private String date;
-
 
 
     // Relación con clase cliente //
